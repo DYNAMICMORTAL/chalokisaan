@@ -43,9 +43,10 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isLoading = Provider.of<AuthProvider>(context, listen: true).isLoading;
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: isLoading == false ? const Center(child: CircularProgressIndicator(color: Colors.black,)) : SingleChildScrollView(
           padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 25),
           child: Center(
             child: Column(
@@ -127,7 +128,9 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
         context: context,
         userModel: userModel,
         profilePic: image!,
-        onsSuccess: () {},
+        onsSuccess: () {
+          ap.saveUserDataToSP().then((value) => null);
+        },
       );
     } else {
       showSnackBar(context, "Please upload a profile Photo");
