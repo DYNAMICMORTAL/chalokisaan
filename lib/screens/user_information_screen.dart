@@ -30,6 +30,17 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
     nameController.dispose();
   }
 
+  void selectImage() async{
+    image = await pickImage(context);
+    setState(() {});
+  }
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +51,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
             child: Column(
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () => selectImage(),
                   child: image == null ? const CircleAvatar(
                     radius: 50,
                     child: Icon(FluentSystemIcons.ic_fluent_person_accounts_filled, size: 30,),
@@ -112,7 +123,12 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
     final ap = Provider.of<AuthProvider>(context, listen: false);
     UserModel userModel = UserModel(name: nameController.text.trim(), profilePic: "", createdAt: "", phoneNumber: "", uid: "");
     if(image!=null){
-      
+      ap.saveUserDataToFirebase(
+        context: context,
+        userModel: userModel,
+        profilePic: image!,
+        onsSuccess: () {},
+      );
     } else {
       showSnackBar(context, "Please upload a profile Photo");
     }

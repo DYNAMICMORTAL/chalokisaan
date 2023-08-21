@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:chalokisaan/data_model/user_data.dart';
 import 'package:chalokisaan/screens/otp_screen.dart';
 import 'package:chalokisaan/utils/basicUtils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -80,5 +83,15 @@ Future<bool> checkExistingUser () async {
       return false;
     }
 }
+
+ void saveUserDataToFirebase({required BuildContext context, required UserModel userModel, required File profilePic, required Function onsSuccess}) async {
+    _isLoading = true;
+    notifyListeners();
+    try{} on FirebaseAuthException catch(e) {
+      showSnackBar(context, e.message.toString());
+      _isLoading = false;
+      notifyListeners();
+    }
+ }
 
 }
