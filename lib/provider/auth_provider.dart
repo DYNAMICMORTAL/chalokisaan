@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:js_util';
 
 import 'package:chalokisaan/data_model/user_data.dart';
 import 'package:chalokisaan/screens/otp_screen.dart';

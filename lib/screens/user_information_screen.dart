@@ -47,7 +47,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
     final isLoading = Provider.of<AuthProvider>(context, listen: true).isLoading;
     return Scaffold(
       body: SafeArea(
-        child: isLoading == false ? const Center(child: CircularProgressIndicator(color: Colors.black,)) : SingleChildScrollView(
+        child: isLoading == true ? const Center(child: CircularProgressIndicator(color: Colors.black,)) : SingleChildScrollView(
           padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 25),
           child: Center(
             child: Column(
