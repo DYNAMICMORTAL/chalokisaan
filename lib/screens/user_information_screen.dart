@@ -1,5 +1,6 @@
 import 'package:chalokisaan/data_model/user_data.dart';
 import 'package:chalokisaan/provider/auth_provider.dart';
+import 'package:chalokisaan/screens/home_screen.dart';
 import 'package:chalokisaan/utils/basicUtils.dart';
 import 'package:chalokisaan/utils/custom_button.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -129,7 +130,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
         userModel: userModel,
         profilePic: image!,
         onsSuccess: () {
-          ap.saveUserDataToSP().then((value) => null);
+          ap.saveUserDataToSP().then((value) => ap.setSignIn().then((value) => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const HomeScreen()), (route) => false)));
         },
       );
     } else {
