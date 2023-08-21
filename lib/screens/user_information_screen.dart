@@ -1,9 +1,14 @@
+import 'package:chalokisaan/data_model/user_data.dart';
+import 'package:chalokisaan/provider/auth_provider.dart';
+import 'package:chalokisaan/utils/basicUtils.dart';
+import 'package:chalokisaan/utils/custom_button.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -53,6 +58,15 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                     ],
                   ),
                 ),
+                const SizedBox(height: 20,),
+                SizedBox(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  child: JustAButton(
+                    text: "Continue",
+                    onPressed: () => storeData(),
+                  ),
+                ),
               ],
             ),
           ),
@@ -71,10 +85,36 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
         maxLines: maxLines,
         decoration: InputDecoration(
           prefixIcon: Container(
-            
+            margin: const EdgeInsets.all(0.8),
+            // decoration: BoxDecoration(
+            //
+            // ),
           ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10),),
+              borderSide: BorderSide(color: Colors.grey.shade500),
+            ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10),),
+            borderSide: BorderSide(color: Colors.grey.shade500),
+          ),
+          hintText: hintText,
+          alignLabelWithHint: true,
+          border: InputBorder.none,
         ),
       ),
     );
+  }
+
+
+
+  void storeData() async{
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    UserModel userModel = UserModel(name: nameController.text.trim(), profilePic: "", createdAt: "", phoneNumber: "", uid: "");
+    if(image!=null){
+      
+    } else {
+      showSnackBar(context, "Please upload a profile Photo");
+    }
   }
 }
