@@ -1,16 +1,26 @@
 import 'package:chalokisaan/screens/ads.dart';
 import 'package:chalokisaan/screens/ads2.dart';
 import 'package:chalokisaan/utils/style.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../Gov_Schemes/government_schemes.dart';
 import 'Button_bar.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: Styles.primaryColor,
         title: Center(
@@ -22,7 +32,8 @@ class HomeScreen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.menu, color: Colors.white),
           onPressed: () {
-            // Handle opening the menu here
+            // Open the drawer when the menu icon is tapped
+            _scaffoldKey.currentState?.openDrawer();
           },
         ),
         actions: [
@@ -40,6 +51,95 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      drawer: Drawer(
+  child: ListView(
+    padding: EdgeInsets.zero,
+    children: [
+      DrawerHeader(
+        decoration: BoxDecoration(
+          color: Styles.primaryColor,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/profile'); // Navigate to Profile screen
+              },
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('lib/assets/undraw_Profile_pic_re_iwgo.png'),
+              ),
+            ),
+            SizedBox(height: 10),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/profile'); // Navigate to Profile screen
+              },
+              child: Text(
+                'Aditi M',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+          ],
+        ),
+      ),
+
+      ListTile(
+        leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
+        title: Text('Home'),
+        onTap: () {
+          Navigator.pushNamed(context, '/home');
+        },
+      ),
+      ListTile(
+  leading: Icon(CupertinoIcons.news),
+  title: Text('Government Schemes'),
+  onTap: () {
+    // Navigate to GovSchemesList screen
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => GovSchemesList()),
+    );
+  },
+
+
+      ),
+      ListTile(
+        leading: Icon(FluentSystemIcons.ic_fluent_more_regular),
+        title: Text('Women Empowerment'),
+        onTap: () {
+          // Add navigation logic to redirect to the pricing section
+        },
+      ),
+      ListTile(
+  leading: Icon(CupertinoIcons.news),
+  title: Text('Farm News'),
+  onTap: () {
+    // Navigate to GovSchemesList screen
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => GovSchemesList()),
+    );
+  },
+
+
+      ),
+      
+      ListTile(
+        leading: Icon(FluentSystemIcons.ic_fluent_info_regular),
+        title: Text('About Us'),
+        onTap: () {
+          // Add navigation logic to redirect to the about us section
+        },
+      ),
+    ],
+  ),
+),
 
       body: SingleChildScrollView(
         child: Column(
