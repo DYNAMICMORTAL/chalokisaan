@@ -1,14 +1,146 @@
-import 'package:flutter/cupertino.dart';
+import 'package:chalokisaan/screens/ads.dart';
+import 'package:chalokisaan/screens/ads2.dart';
+import 'package:chalokisaan/utils/style.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+
+import '../Gov_Schemes/government_schemes.dart';
+import 'Button_bar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Text("hey hi"),
+      appBar: AppBar(
+        backgroundColor: Styles.primaryColor,
+        title: Center(
+          child: Text(
+            "Chalo Kissan",
+            style: Styles.headlineStyle1.copyWith(color: Colors.white),
+          ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.menu, color: Colors.white),
+          onPressed: () {
+            // Handle opening the menu here
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout, color: Colors.white),
+            onPressed: () {
+              // Navigate to BottomBar when the person icon is pressed
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BottomBar(),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Search Bar
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 0),
+              width: MediaQuery.of(context).size.width * 0.85, // 85% width
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xFFF4F6FD),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+              child: Row(
+                children: [
+                  const Icon(Icons.search),
+                  const Gap(20),
+                  Expanded(
+                    child: TextField(
+                      autofocus: false, // Remove autofocus from here
+                      onChanged: (query) {
+                        // Handle search query here
+                      },
+                      decoration: InputDecoration.collapsed(
+                        hintText: "Search for contents in the app",
+                        hintStyle: Styles.headlineStyle5,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // Rest of your content here
+            Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.white,
+              child: Text(
+                "Government Schemes",
+                style: Styles.headlineStyle2,
+              ),
+            ),
+            SizedBox(
+              height: 200, // Adjust the height as needed
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Ads(), // Your first banner ad
+                  Ads(), // Your second banner ad
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.white,
+              child: Text(
+                "Women Empowerment",
+                style: Styles.headlineStyle2,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                // Navigate to WomenBenefitsPage
+                Navigator.pushNamed(context, '/women_benefits');
+              },
+              child: Ads2(), // Your ad with a tap gesture to navigate to WomenBenefitsPage
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Styles.primaryColor,
+        unselectedItemColor: Colors.grey,
+        currentIndex: 0, // Set the current index as needed
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.policy),
+            label: "Government Schemes",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
+          ),
+        ],
+        onTap: (index) {
+          // Handle navigation to different pages based on the index
+          if (index == 0) {
+            // Navigate to Home page
+            Navigator.pushNamed(context, '/home');
+          } else if (index == 1) {
+            // Navigate to GovSchemesList page when "Government Schemes" is tapped
+            Navigator.push(context, MaterialPageRoute(builder: (context) => GovSchemesList()));
+          } else if (index == 2) {
+            // Navigate to Profile page
+            Navigator.pushNamed(context, '/profile');
+          }
+        },
       ),
     );
   }

@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'home_screen.dart';
+
 class Register extends StatefulWidget {
   const Register({super.key});
 
@@ -16,16 +18,16 @@ class _RegisterState extends State<Register> {
   final TextEditingController phoneController = TextEditingController();
 
   Country selectedCountry = Country(
-      phoneCode: "91",
-      countryCode: "IN",
-      e164Sc: 0,
-      geographic: true,
-      level: 1,
-      name: "India",
-      example: "India",
-      displayName: "India",
-      displayNameNoCountryCode: "IN",
-      e164Key: "",
+    phoneCode: "91",
+    countryCode: "IN",
+    e164Sc: 0,
+    geographic: true,
+    level: 1,
+    name: "India",
+    example: "India",
+    displayName: "India",
+    displayNameNoCountryCode: "IN",
+    e164Key: "",
   );
 
   @override
@@ -65,13 +67,13 @@ class _RegisterState extends State<Register> {
                             ),
                             onSelect: (value){
 
-                          setState(() {
-                            selectedCountry = value;
-                          });
-                        });
+                              setState(() {
+                                selectedCountry = value;
+                              });
+                            });
                       },
                       child: Text("${selectedCountry.flagEmoji} +${selectedCountry.phoneCode}",
-                      style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),),
+                        style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),),
 
                     ),
                   ),
@@ -81,12 +83,10 @@ class _RegisterState extends State<Register> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.green,
-
                     ),
                     child: Icon(Icons.done, color: Colors.black, size: 20,),
                   ) : null,
                 ),
-
               ),
               const SizedBox(height: 20,),
               SizedBox(
@@ -99,6 +99,18 @@ class _RegisterState extends State<Register> {
                   text: "Login",
                 ),
               ),
+              const SizedBox(height: 10,), // Add spacing
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: JustAButton(
+                  onPressed: () {
+                    // Handle "Login as Guest" button press
+                    loginAsGuest();
+                  },
+                  text: "Login as Guest",
+                ),
+              ),
             ],
           ),
         ),
@@ -106,10 +118,15 @@ class _RegisterState extends State<Register> {
     );
   }
 
-
   void sendPhoneNumber() {
     final ap = Provider.of<AuthProvider>(context, listen: false);
     String phoneNumber = phoneController.text.trim();
     ap.signInWithPhone(context, "+${selectedCountry.phoneCode}$phoneNumber");
+  }
+
+  void loginAsGuest() {
+    // Implement the logic for "Login as Guest" button press here
+    // For example, you can navigate to HomeScreen
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
   }
 }
