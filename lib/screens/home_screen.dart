@@ -1,3 +1,4 @@
+import 'package:chalokisaan/agrotourism/screens/homeagro.dart';
 import 'package:chalokisaan/screens/ads.dart';
 import 'package:chalokisaan/screens/ads2.dart';
 import 'package:chalokisaan/utils/style.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../Gov_Schemes/government_schemes.dart';
+import '../agrotourism/screens/video_screen.dart';
 import '../news/news.dart';
 import 'Button_bar.dart';
 
@@ -107,8 +109,17 @@ class _HomeScreenState extends State<HomeScreen> {
       MaterialPageRoute(builder: (context) => GovSchemesList()),
     );
   },
-
-
+      ),
+      ListTile(
+  leading: Icon(CupertinoIcons.news),
+  title: Text('Agrotourism'),
+  onTap: () {
+    // Navigate to GovSchemesList screen
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AgroHome()),
+    );
+  },
       ),
       ListTile(
         leading: Icon(FluentSystemIcons.ic_fluent_more_regular),
