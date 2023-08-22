@@ -5,6 +5,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'chats/community_view.dart';
 
 import '../Gov_Schemes/government_schemes.dart';
 import '../news/news.dart';
@@ -225,7 +226,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.policy),
-            label: "Government Schemes",
+            label: "Gov.",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.policy),
+            label: "Community",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -241,6 +246,10 @@ class _HomeScreenState extends State<HomeScreen> {
             // Navigate to GovSchemesList page when "Government Schemes" is tapped
             Navigator.push(context, MaterialPageRoute(builder: (context) => GovSchemesList()));
           } else if (index == 2) {
+            // Navigate to Profile page
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Chat()));
+          }
+          else if (index == 3) {
             // Navigate to Profile page
             Navigator.pushNamed(context, '/profile');
           }
