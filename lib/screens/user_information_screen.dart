@@ -130,7 +130,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
         userModel: userModel,
         profilePic: image!,
         onsSuccess: () {
-          ap.saveUserDataToSP().then((value) => ap.setSignIn().then((value) => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const HomeScreen()), (route) => false)));
+          ap.saveUserDataToSP().then((value) => ap.setSignIn().then((value) => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomeScreen()), (route) => false)));
         },
       );
     } else {
