@@ -195,7 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.only(top: 20,),
                 color: Colors.white,
                 child: Text(
                   "Women Empowerment",

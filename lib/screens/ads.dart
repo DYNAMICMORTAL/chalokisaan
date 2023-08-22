@@ -39,9 +39,6 @@ class BusCard extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: const Image(
-                              image: AssetImage('lib/assets/loveit_heart.png'),
-                            ),
                           ),
                         ),
                       )
@@ -54,7 +51,7 @@ class BusCard extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "Find your government schemes", // Updated heading
+                            "Pradhan Mantri Krishi Sinchai Yojana", // Updated heading
                             style: Styles.headlineStyle2.copyWith(
                                 color: Colors.white, fontSize: 27),
                           )
