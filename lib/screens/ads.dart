@@ -23,27 +23,10 @@ class BusCard extends StatelessWidget {
                   bottomRight: Radius.circular(20),
                 ),
               ),
-              padding: const EdgeInsets.only(right: 16, top: 16, bottom: 16),
+              padding: const EdgeInsets.only(top: 16, bottom: 16, left: 16),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        child: SizedBox(
-                          width: 135,
-                          height: 135,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -52,15 +35,15 @@ class BusCard extends StatelessWidget {
                         children: [
                           Text(
                             "Pradhan Mantri Krishi Sinchai Yojana", // Updated heading
-                            style: Styles.headlineStyle2.copyWith(
-                                color: Colors.white, fontSize: 27),
+                            style: Styles.headlineStyle4.copyWith(
+                                color: Colors.white, fontSize: 15, fontWeight: FontWeight.w900),
                           )
                         ],
                       ),
                       Row(
                         children: [
                           Text(
-                            "Promote government schemes are here.", // Added related info
+                            "A Scheme", // Added related info
                             style: Styles.headlineStyle4.copyWith(
                                 color: Colors.white),
                           )

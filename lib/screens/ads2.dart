@@ -21,7 +21,8 @@ class Ads2 extends StatelessWidget {
             Container(
               height: 170,
               decoration: const BoxDecoration(
-                color: Colors.white,
+                // color: Colors.white,
+                color: Color(0xFF6C63FF),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   bottomLeft: Radius.circular(20),
@@ -59,7 +60,7 @@ class Ads2 extends StatelessWidget {
                       width: 150, // Adjust the width of the image container
                       child: Column(
                         children: [
-                          Image(image: AssetImage('lib/assets/groovy.png')),
+                          // Image(image: AssetImage('lib/assets/groovy.png')),
                         ],
                       ),
                     ),
