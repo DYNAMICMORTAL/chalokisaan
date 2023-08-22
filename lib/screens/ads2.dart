@@ -40,13 +40,13 @@ class Ads2 extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("She is Farming", style: Styles.headlineStyle2),
+                          Text("She is Farming", style: Styles.headlineStyle2.copyWith(color: Colors.white)),
                           const SizedBox(height: 5), // Add a small gap between text and image
                           Container(
                             child: Row(
                               children: [
-                                Text("Avail your benefits"),
-                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                Text("Avail your benefits", style: TextStyle(color: Colors.white),),
+                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled, color: Colors.white,),
                               ],
                             ),
                           ),
