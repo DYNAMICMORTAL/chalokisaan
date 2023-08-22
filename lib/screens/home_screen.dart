@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Styles.primaryColor,
         title: Center(
           child: Text(
-            "Chalo Kissan",
+            "Chalo Kisaan",
             style: Styles.headlineStyle1.copyWith(color: Colors.white),
           ),
         ),
@@ -141,73 +141,76 @@ class _HomeScreenState extends State<HomeScreen> {
   ),
 ),
 
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Search Bar
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 0),
-              width: MediaQuery.of(context).size.width * 0.85, // 85% width
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: const Color(0xFFF4F6FD),
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-              child: Row(
-                children: [
-                  const Icon(Icons.search),
-                  const Gap(20),
-                  Expanded(
-                    child: TextField(
-                      autofocus: false, // Remove autofocus from here
-                      onChanged: (query) {
-                        // Handle search query here
-                      },
-                      decoration: InputDecoration.collapsed(
-                        hintText: "Search for contents in the app",
-                        hintStyle: Styles.headlineStyle5,
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Search Bar
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 20.0,),
+                width: MediaQuery.of(context).size.width * 0.90, // 85% width
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFFF4F6FD),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                child: Row(
+                  children: [
+                    const Icon(Icons.search),
+                    const Gap(20),
+                    Expanded(
+                      child: TextField(
+                        autofocus: false, // Remove autofocus from here
+                        onChanged: (query) {
+                          // Handle search query here
+                        },
+                        decoration: InputDecoration.collapsed(
+                          hintText: "Search for contents in the app",
+                          hintStyle: Styles.headlineStyle5,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            // Rest of your content here
-            Container(
-              padding: EdgeInsets.all(20.0),
-              color: Colors.white,
-              child: Text(
-                "Government Schemes",
-                style: Styles.headlineStyle2,
+              // Rest of your content here
+              Container(
+                padding: EdgeInsets.all(20.0),
+                color: Colors.white,
+                child: Text(
+                  "Government Schemes",
+                  style: Styles.headlineStyle2,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 200, // Adjust the height as needed
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Ads(), // Your first banner ad
-                  Ads(), // Your second banner ad
-                ],
+              SizedBox(
+                height: 200, // Adjust the height as needed
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Ads(), // Your first banner ad
+                    Ads(), // Your second banner ad
+                  ],
+                ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.all(20.0),
-              color: Colors.white,
-              child: Text(
-                "Women Empowerment",
-                style: Styles.headlineStyle2,
+              Container(
+                padding: EdgeInsets.all(20.0),
+                color: Colors.white,
+                child: Text(
+                  "Women Empowerment",
+                  style: Styles.headlineStyle2,
+                ),
               ),
-            ),
-            GestureDetector(
-              onTap: () {
-                // Navigate to WomenBenefitsPage
-                Navigator.pushNamed(context, '/women_benefits');
-              },
-              child: Ads2(), // Your ad with a tap gesture to navigate to WomenBenefitsPage
-            ),
-          ],
+              GestureDetector(
+                onTap: () {
+                  // Navigate to WomenBenefitsPage
+                  Navigator.pushNamed(context, '/women_benefits');
+                },
+                child: Ads2(), // Your ad with a tap gesture to navigate to WomenBenefitsPage
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
