@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../Gov_Schemes/government_schemes.dart';
+import '../news/news.dart';
 import 'Button_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -123,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // Navigate to GovSchemesList screen
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => GovSchemesList()),
+      MaterialPageRoute(builder: (context) => NewsApp()),
     );
   },
 
