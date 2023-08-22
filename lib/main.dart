@@ -1,3 +1,4 @@
+import 'package:chalokisaan/agrotourism/screens/VideoScreen.dart';
 import 'package:chalokisaan/provider/auth_provider.dart';
 import 'package:chalokisaan/screens/otp_screen.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:chalokisaan/screens/register_view.dart';
 import 'package:provider/provider.dart';
 import 'package:chalokisaan/screens/home_screen.dart';
+
+import 'agrotourism/screens/gettingstarted.dart';
+import 'agrotourism/screens/video_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +31,8 @@ class MyApp extends StatelessWidget {
         routes: {
           '/register': (context) => const Register(),
           '/homescreen': (context) => HomeScreen(),
+          '/learn': (context) => DisplayScreen(),
+          '/get_started': (context) => GettingStartedScreen(), // Learn screen
           // '/home': (context) => const HomeScreen(),
           // '/123Up': (context) => const Up123(),
           // '/123Down': (context) => const Down123(),
