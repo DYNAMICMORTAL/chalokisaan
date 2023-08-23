@@ -124,6 +124,13 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
       ListTile(
+        leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
+        title: Text('Tourist Attractions'),
+        onTap: () {
+          Navigator.pushNamed(context, '/maps');
+        },
+      ),
+      ListTile(
         leading: Icon(Icons.map),
         title: Text('MAPS'),
         onTap: () {

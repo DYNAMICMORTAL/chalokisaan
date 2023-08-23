@@ -8,6 +8,8 @@ import 'package:chalokisaan/screens/register_view.dart';
 import 'package:provider/provider.dart';
 import 'package:chalokisaan/screens/home_screen.dart';
 
+import 'maps/maps.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -29,6 +31,7 @@ class MyApp extends StatelessWidget {
           '/register': (context) => const Register(),
           '/homescreen': (context) => HomeScreen(),
           '/custom_packages': (context) => CustomPackagesScreen(),
+          '/maps': (context) => TouristAttractionsScreen(),
           // '/home': (context) => const HomeScreen(),
           // '/123Up': (context) => const Up123(),
           // '/123Down': (context) => const Down123(),
