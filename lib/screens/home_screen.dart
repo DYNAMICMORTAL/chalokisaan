@@ -233,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             child: const Image(
                                                 image: AssetImage('lib/assets/grape2.png',),
                                               // width: 150,
-                                              width: 175,
+                                              width: 200,
                                             ),
                                           ),
                                           const Gap(5),
@@ -275,22 +275,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text("Nashik Vineyard Experience:", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                          Text("Mahabaleshwar Strawberry Fes..", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
                                           const Gap(10),
                                           Container(
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(10),
                                             ),
                                             child: const Image(
-                                              image: AssetImage('lib/assets/grape2.png',),
+                                              image: AssetImage('lib/assets/strawberries.png',),
                                               // width: 150,
-                                              width: 175,
+                                              width: 225,
                                             ),
                                           ),
                                           const Gap(5),
                                           // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
                                           // const Gap(5),
-                                          Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
+                                          Text("Sweet and juicy straw only from...", style: TextStyle(fontWeight: FontWeight.w500),),
                                           const Gap(5),
                                           Row(
                                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -326,22 +326,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text("Nashik Vineyard Experience:", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                          Text("Nagpur Orange Orchard Ad..", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
                                           const Gap(10),
                                           Container(
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(10),
                                             ),
                                             child: const Image(
-                                              image: AssetImage('lib/assets/grape2.png',),
+                                              image: AssetImage('lib/assets/orange.png',),
                                               // width: 150,
-                                              width: 175,
+                                              width: 200,
                                             ),
                                           ),
                                           const Gap(5),
                                           // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
                                           // const Gap(5),
-                                          Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
+                                          Text("Orange never so orange befo..", style: TextStyle(fontWeight: FontWeight.w500),),
                                           const Gap(5),
                                           Row(
                                             crossAxisAlignment: CrossAxisAlignment.start,
