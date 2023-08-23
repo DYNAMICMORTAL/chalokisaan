@@ -144,73 +144,115 @@ class _HomeScreenState extends State<HomeScreen> {
 ),
 
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Search Bar
               Container(
-                margin: EdgeInsets.symmetric(vertical: 20.0,),
-                width: MediaQuery.of(context).size.width * 0.90, // 85% width
+                // margin: EdgeInsets.symmetric(vertical: 20.0,),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: const Color(0xFFF4F6FD),
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                child: Row(
+                // padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                // child: Row(
+                //   children: [
+                //     const Icon(Icons.search),
+                //     const Gap(20),
+                //     Expanded(
+                //       child: TextField(
+                //         autofocus: false, // Remove autofocus from here
+                //         onChanged: (query) {
+                //           // Handle search query here
+                //         },
+                //         decoration: InputDecoration.collapsed(
+                //           hintText: "Search for contents in the app",
+                //           hintStyle: Styles.headlineStyle5,
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(left:20, right: 20, top: 20, bottom: 20),
+                width: MediaQuery.of(context).size.width, // 85%
+                // height: 500
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade300,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Icon(Icons.search),
-                    const Gap(20),
-                    Expanded(
-                      child: TextField(
-                        autofocus: false, // Remove autofocus from here
-                        onChanged: (query) {
-                          // Handle search query here
-                        },
-                        decoration: InputDecoration.collapsed(
-                          hintText: "Search for contents in the app",
-                          hintStyle: Styles.headlineStyle5,
-                        ),
-                      ),
-                    ),
+                    Text("Why choose AgroTourism?", style: Styles.headlineStyle1,),
+                    Text("Close to nature"),
                   ],
                 ),
+              ),
+              const Gap(10),
+              Container(
+                padding: const EdgeInsets.only(left:20, right: 20, top: 20, bottom: 20),
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text("Exclusive Packages", style: Styles.headlineStyle2,),
+                      ],
+                    ),
+                    const Gap(20),
+                    Container(
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                // height: 100,
+                                width: MediaQuery.of(context).size.width/2.5,
+                                child: Column(
+                                  children: [
+                                    // Image.asset('assets/download.jpeg'),
+                                    Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                    const Gap(5),
+                                    Row(
+                                      children: [
+                                        Text("See More "),
+                                        Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ), //Package 1 Container
+                              const Spacer(),
+                              Container(
+                                height: 100,
+                                width: MediaQuery.of(context).size.width/2.5,
+                                child: Column(
+                                  children: [
+                                    Text("Chiplun Cheeku Farm", style: Styles.headlineStyle3,),
+                                    const Gap(5),
+                                    Row(
+                                      children: [
+                                        Text("See More "),
+                                        Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),//Package 2 Container
+                            ],
+                          ), //#1 row
+                          Row(), // #2 Row
+                        ],
+                      ),
+                    ),//inner outer exclusive packages
+
+                  ],
+                ),
+
               ),
               // Rest of your content here
-              Container(
-                padding: EdgeInsets.only(top: 20,),
-                color: Colors.white,
-                child: Text(
-                  "Government Schemes",
-                  style: Styles.headlineStyle2,
-                ),
-              ),
-              SizedBox(
-                height: 200, // Adjust the height as needed
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Ads(), // Your first banner ad
-                    Ads(), // Your second banner ad
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 20,),
-                color: Colors.white,
-                child: Text(
-                  "Women Empowerment",
-                  style: Styles.headlineStyle2,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Navigate to WomenBenefitsPage
-                  Navigator.pushNamed(context, '/women_benefits');
-                },
-                child: Ads2(), // Your ad with a tap gesture to navigate to WomenBenefitsPage
-              ),
             ],
           ),
         ),
