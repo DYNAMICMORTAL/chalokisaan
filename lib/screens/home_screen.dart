@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFFF14453d),
+        backgroundColor: Color(0xFFF14453D),
         title: Center(
           child: Text(
             "Chalo Kisaan",
@@ -59,8 +59,16 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
+  child: ListView(
+    padding: EdgeInsets.zero,
+    children: [
+      DrawerHeader(
+        decoration: BoxDecoration(
+          color:Color(0xFFF14453D),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
             DrawerHeader(
               decoration: BoxDecoration(
@@ -163,6 +171,49 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+
+
+
+      ListTile(
+        leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
+        title: Text('Home'),
+        onTap: () {
+          Navigator.pushNamed(context, '/home');
+        },
+      ),
+      ListTile(
+  leading: Icon(CupertinoIcons.news),
+  title: Text('Government Schemes'),
+  onTap: () {
+    // Navigate to GovSchemesList screen
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => GovSchemesList()),
+    );
+  },
+
+
+      ),
+      ListTile(
+        leading: Icon(Icons.diamond_rounded),
+        title: Text('Visit Hidden Gems →'),
+        onTap: () {
+          // Add navigation logic to redirect to the pricing section
+        },
+      ),
+      ListTile(
+
+        leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
+        title: Text('Tourist Attractions'),
+        onTap: () {
+          Navigator.pushNamed(context, '/maps');
+        },
+      ),
+      ListTile(
+        leading: Icon(Icons.map),
+        title: Text('MAPS'),
+
+
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -195,11 +246,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 //   ],
                 // ),
               ),
+
               Container(
                 padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
                 width: MediaQuery.of(context).size.width, // 85%
                 // height: 500
               ),
+
               const Gap(10),
               Container(
                 padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
@@ -509,7 +562,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Styles.primaryColor,
+        selectedItemColor: Color(0xFFF14453D),
         unselectedItemColor: Colors.grey,
         currentIndex: 0, // Set the current index as needed
         items: [
