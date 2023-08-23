@@ -7,6 +7,7 @@ class CalenderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: BookingPage(),
     );
   }
@@ -38,7 +39,7 @@ class _BookingPageState extends State<BookingPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Booking Details'),
-        backgroundColor: Styles.primaryColor,
+        backgroundColor: Color(0xFFF14453D),
       ),
       body: Center(
         child: Column(

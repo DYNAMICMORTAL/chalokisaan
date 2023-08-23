@@ -12,7 +12,8 @@ class Chat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor: Styles.primaryColor,
+        backgroundColor: Color(0xFFF14453D),
+          iconTheme: IconThemeData(color: Colors.white),
         title: Center(
         child: Text(
         "Community Groups",

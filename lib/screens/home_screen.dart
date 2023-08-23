@@ -428,12 +428,12 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.home),
             label: "Home",
           ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.policy),
+          //   label: "Gov.",
+          // ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.policy),
-            label: "Gov.",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.policy),
+            icon: Icon(Icons.chat_bubble),
             label: "Community",
           ),
           BottomNavigationBarItem(
@@ -448,12 +448,8 @@ class _HomeScreenState extends State<HomeScreen> {
             Navigator.pushNamed(context, '/home');
           } else if (index == 1) {
             // Navigate to GovSchemesList page when "Government Schemes" is tapped
-            Navigator.push(context, MaterialPageRoute(builder: (context) => GovSchemesList()));
-          } else if (index == 2) {
-            // Navigate to Profile page
             Navigator.push(context, MaterialPageRoute(builder: (context) => Chat()));
-          }
-          else if (index == 3) {
+          } else if (index == 2) {
             // Navigate to Profile page
             Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileView()));
           }
