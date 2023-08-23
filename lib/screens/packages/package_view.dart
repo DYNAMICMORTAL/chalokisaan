@@ -14,7 +14,8 @@ class ExPackages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor: Color(0xFFF8D7AFF),
+        backgroundColor: Color(0xFFF14453D),
+          iconTheme: IconThemeData(color: Colors.white),
         title: Center(
         child: Text(
         "Nashik Vineyard Experience Project", style: TextStyle(overflow: TextOverflow.ellipsis, color: Colors.white, fontWeight: FontWeight.w700),

@@ -120,25 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: Icon(Icons.diamond_rounded),
               title: Text('Visit Hidden Gems →'),
               onTap: () {
-                // Add navigation logic to redirect to the pricing section
-              },
-            ),
-            ListTile(
-              leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
-              title: Text('Tourist Attractions'),
-              onTap: () {
                 Navigator.pushNamed(context, '/maps');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('MAPS'),
-              onTap: () {
-                // Add navigation logic to redirect to the pricing section
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => TouristAttractionsScreen()),
-                );
               },
             ),
             ListTile(
@@ -353,6 +335,57 @@ class _HomeScreenState extends State<HomeScreen> {
                                           // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
                                           // const Gap(5),
                                           Text("Orange never so orange befo..", style: TextStyle(fontWeight: FontWeight.w500),),
+                                          const Gap(5),
+                                          Row(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              const Gap(5),
+                                              Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                              Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ), //Package 1 Container
+                                  ],
+                                ), //#1 row
+                                Row(), // #2 Row
+                              ],
+                            ),
+                          ),
+                          const Gap(25),
+                          Container(
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                                      // height: 100,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey.shade200,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      // width: MediaQuery.of(context).size.width/2.5,
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text("Ratnagiri Haapus Festival...", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                          const Gap(10),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(10),
+                                            ),
+                                            child: const Image(
+                                              image: AssetImage('lib/assets/mango.png',),
+                                              // width: 150,
+                                              width: 250,
+                                            ),
+                                          ),
+                                          const Gap(5),
+                                          // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                          // const Gap(5),
+                                          Text("Organic Farms to Coconut Groves", style: TextStyle(fontWeight: FontWeight.w500),),
                                           const Gap(5),
                                           Row(
                                             crossAxisAlignment: CrossAxisAlignment.start,

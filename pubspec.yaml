@@ -78,6 +78,7 @@ flutter:
     - lib/assets/grape2.png
     - lib/assets/strawberries.png
     - lib/assets/orange.png
+    - lib/assets/mango.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

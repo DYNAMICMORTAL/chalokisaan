@@ -30,7 +30,7 @@ class _TouristAttractionsScreenState extends State<TouristAttractionsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tourist Attractions'),
+        title: Text('Hidden Gems'),
       ),
       body: Column(
         children: [

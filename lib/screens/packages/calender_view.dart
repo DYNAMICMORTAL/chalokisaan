@@ -56,11 +56,17 @@ class _BookingPageState extends State<BookingPage> {
             ),
             SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFF354A21),
+              ),
               onPressed: () => _selectDate(context),
               child: Text('Pick Date'),
             ),
             SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFF607D3B),
+              ),
               onPressed: () {
                 // Implement your booking confirmation logic here
               },
