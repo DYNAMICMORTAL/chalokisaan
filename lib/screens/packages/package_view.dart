@@ -1,6 +1,8 @@
 import 'package:chalokisaan/utils/custom_button.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../../utils/style.dart';
 import 'calender_view.dart';
@@ -27,6 +29,83 @@ class ExPackages extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("About the Package: →", style: Styles.headlineStyle2,),
+              const Gap(20),
+              Container(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Location: Nashik, Maharashtra", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Duration: 2 Days, 1 Night", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Guided tour of renowned vineyards and wineries", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Wine tasting sessions with experts", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Interactive workshops on grape cultivation and winemaking", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Accommodation in a vineyard ", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Meals: Traditional Maharashtrian meals using locally sourced ingredients", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Charges: 1,999 per person", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Additional Options (not included in package):", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("◉"),
+                        const Gap(10),
+                        Text("Exclusive wine-pairing dinner", style: Styles.headlineStyle3,),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
               JustAButton(text: "text", onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => CalenderView()));
               }),
