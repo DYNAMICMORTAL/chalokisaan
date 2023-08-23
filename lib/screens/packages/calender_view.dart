@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/style.dart';
+import '../payments/aknowledge.dart';
+import '../payments/confirm_details.dart';
 
 
 class CalenderView extends StatelessWidget {
@@ -8,6 +10,7 @@ class CalenderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: BookingPage(),
+      debugShowCheckedModeBanner: false, 
     );
   }
 }
@@ -15,6 +18,7 @@ class CalenderView extends StatelessWidget {
 class BookingPage extends StatefulWidget {
   @override
   _BookingPageState createState() => _BookingPageState();
+  
 }
 
 class _BookingPageState extends State<BookingPage> {
@@ -36,6 +40,7 @@ class _BookingPageState extends State<BookingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: Text('Booking Details'),
         backgroundColor: Styles.primaryColor,
@@ -61,9 +66,16 @@ class _BookingPageState extends State<BookingPage> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Implement your booking confirmation logic here
-              },
-              child: Text('Confirm Booking'),
+            // Navigate to the ConfirmOrderPage
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AcknowledgementPage(),
+              ),
+            );
+          },
+
+              child: Text('Continue to AKnowledgement'),
             ),
           ],
         ),
