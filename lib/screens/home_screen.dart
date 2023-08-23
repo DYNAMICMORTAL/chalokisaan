@@ -59,117 +59,112 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       drawer: Drawer(
-  child: ListView(
-    padding: EdgeInsets.zero,
-    children: [
-      DrawerHeader(
-        decoration: BoxDecoration(
-          color:Color(0xFFF14453D),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          padding: EdgeInsets.zero,
           children: [
-            InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '/profile'); // Navigate to Profile screen
-              },
-              child: CircleAvatar(
-                radius: 40,
-                backgroundImage: AssetImage('lib/assets/undraw_Profile_pic_re_iwgo.png'),
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xFFF14453D),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/profile'); // Navigate to Profile screen
+                    },
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage('lib/assets/undraw_Profile_pic_re_iwgo.png'),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/profile'); // Navigate to Profile screen
+                    },
+                    child: Text(
+                      'Aditi M',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                ],
               ),
             ),
-            SizedBox(height: 10),
-            InkWell(
+
+            ListTile(
+              leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
+              title: Text('Home'),
               onTap: () {
-                Navigator.pushNamed(context, '/profile'); // Navigate to Profile screen
+                Navigator.pushNamed(context, '/home');
               },
-              child: Text(
-                'Aditi M',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-              ),
             ),
-            SizedBox(height: 10),
+            ListTile(
+              leading: Icon(CupertinoIcons.news),
+              title: Text('Government Schemes'),
+              onTap: () {
+                // Navigate to GovSchemesList screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GovSchemesList()),
+                );
+              },
+
+
+            ),
+            ListTile(
+              leading: Icon(Icons.diamond_rounded),
+              title: Text('Visit Hidden Gems →'),
+              onTap: () {
+                // Add navigation logic to redirect to the pricing section
+              },
+            ),
+            ListTile(
+              leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
+              title: Text('Tourist Attractions'),
+              onTap: () {
+                Navigator.pushNamed(context, '/maps');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('MAPS'),
+              onTap: () {
+                // Add navigation logic to redirect to the pricing section
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TouristAttractionsScreen()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(CupertinoIcons.news),
+              title: Text('Farm News'),
+              onTap: () {
+                // Navigate to GovSchemesList screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NewsApp()),
+                );
+              },
+
+
+            ),
+
+            ListTile(
+              leading: Icon(FluentSystemIcons.ic_fluent_info_regular),
+              title: Text('About Us'),
+              onTap: () {
+                // Add navigation logic to redirect to the about us section
+              },
+            ),
           ],
         ),
       ),
-
-      ListTile(
-        leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
-        title: Text('Home'),
-        onTap: () {
-          Navigator.pushNamed(context, '/home');
-        },
-      ),
-      ListTile(
-  leading: Icon(CupertinoIcons.news),
-  title: Text('Government Schemes'),
-  onTap: () {
-    // Navigate to GovSchemesList screen
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => GovSchemesList()),
-    );
-  },
-
-
-      ),
-      ListTile(
-        leading: Icon(Icons.diamond_rounded),
-        title: Text('Visit Hidden Gems →'),
-        onTap: () {
-          // Add navigation logic to redirect to the pricing section
-        },
-      ),
-      ListTile(
-<<<<<<< HEAD
-        leading: Icon(Icons.diamond_rounded),
-        title: Text('Visit Hidden Gems →'),
-=======
-        leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
-        title: Text('Tourist Attractions'),
-        onTap: () {
-          Navigator.pushNamed(context, '/maps');
-        },
-      ),
-      ListTile(
-        leading: Icon(Icons.map),
-        title: Text('MAPS'),
->>>>>>> f1ea2464461e3e3d9b20fc0435ce994fe9cef169
-        onTap: () {
-          // Add navigation logic to redirect to the pricing section
-          Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => TouristAttractionsScreen()),
-    );
-        },
-      ),
-      ListTile(
-  leading: Icon(CupertinoIcons.news),
-  title: Text('Farm News'),
-  onTap: () {
-    // Navigate to GovSchemesList screen
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => NewsApp()),
-    );
-  },
-
-
-      ),
-      
-      ListTile(
-        leading: Icon(FluentSystemIcons.ic_fluent_info_regular),
-        title: Text('About Us'),
-        onTap: () {
-          // Add navigation logic to redirect to the about us section
-        },
-      ),
-    ],
-  ),
-),
 
       body: Container(
         child: SingleChildScrollView(
@@ -242,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               borderRadius: BorderRadius.circular(10),
                                             ),
                                             child: const Image(
-                                                image: AssetImage('lib/assets/grape2.png',),
+                                              image: AssetImage('lib/assets/grape2.png',),
                                               // width: 150,
                                               width: 200,
                                             ),
@@ -425,7 +420,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Color(0xFFF14453D),
+        selectedItemColor: Styles.primaryColor,
         unselectedItemColor: Colors.grey,
         currentIndex: 0, // Set the current index as needed
         items: [

@@ -206,7 +206,7 @@ class SchemeButton extends StatelessWidget {
           );
         },
         style: ElevatedButton.styleFrom(
-          primary: Color(0xFFF3D7068),
+          primary: Color(0xFFF607D3B),
         ),
         child: Text(
           schemeInfo.title,
