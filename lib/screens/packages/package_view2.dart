@@ -7,8 +7,8 @@ import 'package:gap/gap.dart';
 import '../../utils/style.dart';
 import 'calender_view.dart';
 
-class ExPackages extends StatelessWidget {
-  const ExPackages({super.key});
+class ExPackages2 extends StatelessWidget {
+  const ExPackages2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ExPackages extends StatelessWidget {
         backgroundColor: Color(0xFF14453D),
         title: Center(
         child: Text(
-        "Nashik Vineyard Experience Project", style: TextStyle(overflow: TextOverflow.ellipsis, color: Colors.white, fontWeight: FontWeight.w700),
+        "Mahabaleshwar Strawberry Festival Package", style: TextStyle(overflow: TextOverflow.ellipsis, color: Colors.white, fontWeight: FontWeight.w700),
 
     ),
     ),),
@@ -37,7 +37,7 @@ class ExPackages extends StatelessWidget {
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Location: Nashik, Maharashtra", style: Styles.headlineStyle3,),
+                        Text("Location: Mahabaleshwar, Maharashtra", style: Styles.headlineStyle3,),
                       ],
                     ),
                     Row(
@@ -80,7 +80,7 @@ class ExPackages extends StatelessWidget {
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Expanded(child: Text("Meals: Traditional Maharashtrian meals using locally sourced ingredients", style: Styles.headlineStyle3,)),
+                        Expanded(child: Text("Meals: Breakfast, lunch, and strawberry-themed dinner", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
@@ -101,7 +101,7 @@ class ExPackages extends StatelessWidget {
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Exclusive wine-pairing dinner", style: Styles.headlineStyle3,),
+                        Text("Horseback riding in the hills", style: Styles.headlineStyle3,),
                       ],
                     ),
                   ],
@@ -111,7 +111,7 @@ class ExPackages extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  JustAButton(text: "Go Ahead", onPressed: () {
+                  JustAButton(text: "Go Ahead",  onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => CalenderView()));
                   }),
                 ],
