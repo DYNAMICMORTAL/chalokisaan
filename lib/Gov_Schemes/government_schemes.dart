@@ -86,7 +86,8 @@ class _GovSchemesListState extends State<GovSchemesList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Government Schemes"),
+        title: Text("Government Schemes", style: Styles.headlineStyle2.copyWith(color: Colors.white),),
+        backgroundColor: Color(0xFFF14453D),iconTheme: IconThemeData(color: Colors.white),
       ),
       body: Column(
         children: [
@@ -133,12 +134,9 @@ class _GovSchemesListState extends State<GovSchemesList> {
                       filterSchemesByState();
                     });
                   },
-                  style: ElevatedButton.styleFrom(
-                    primary: Styles.primaryColor,
-                  ),
                   child: Text(
                     "Apply",
-                    style: Styles.textStyle.copyWith(color: Colors.white),
+                    style: Styles.textStyle.copyWith(color: Colors.deepPurpleAccent),
                   ),
                 ),
               ],
@@ -208,7 +206,7 @@ class SchemeButton extends StatelessWidget {
           );
         },
         style: ElevatedButton.styleFrom(
-          primary: Styles.primaryColor,
+          primary: Color(0xFFF3D7068),
         ),
         child: Text(
           schemeInfo.title,

@@ -12,7 +12,7 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Color(0xFFF14453D),iconTheme: IconThemeData(color: Colors.white),
         title: Center(
         child: Text(
         "About",

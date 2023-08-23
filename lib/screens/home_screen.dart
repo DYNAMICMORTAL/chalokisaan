@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Styles.primaryColor,
+        backgroundColor: Color(0xFFF14453D),
         title: Center(
           child: Text(
             "Chalo Kisaan",
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
     children: [
       DrawerHeader(
         decoration: BoxDecoration(
-          color: Styles.primaryColor,
+          color:Color(0xFFF14453D),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -124,8 +124,8 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
       ListTile(
-        leading: Icon(Icons.map),
-        title: Text('MAPS'),
+        leading: Icon(Icons.diamond_rounded),
+        title: Text('Visit Hidden Gems →'),
         onTap: () {
           // Add navigation logic to redirect to the pricing section
           Navigator.push(
@@ -190,21 +190,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 //     ),
                 //   ],
                 // ),
-              ),
-              Container(
-                padding: const EdgeInsets.only(left:20, right: 20, top: 20, bottom: 20),
-                width: MediaQuery.of(context).size.width, // 85%
-                // height: 500
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade300,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Why choose AgroTourism?", style: Styles.headlineStyle1,),
-                    Text("Close to nature"),
-                  ],
-                ),
               ),
               const Gap(10),
               Container(
@@ -428,7 +413,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Styles.primaryColor,
+        selectedItemColor: Color(0xFFF14453D),
         unselectedItemColor: Colors.grey,
         currentIndex: 0, // Set the current index as needed
         items: [
