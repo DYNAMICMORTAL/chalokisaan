@@ -7,8 +7,8 @@ import 'package:gap/gap.dart';
 import '../../utils/style.dart';
 import 'calender_view.dart';
 
-class ExPackages extends StatelessWidget {
-  const ExPackages({super.key});
+class ExPackages2 extends StatelessWidget {
+  const ExPackages2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,11 @@ class ExPackages extends StatelessWidget {
         backgroundColor: Color(0xFFF14453D),
         iconTheme: IconThemeData(color: Colors.white),
         title: Center(
-          child: Text(
-            "Mahabaleshwar Strawberry Festival", style: TextStyle(overflow: TextOverflow.ellipsis, color: Colors.white, fontWeight: FontWeight.w700),
+          child: Expanded(
+            child: Text(
+              "Mahabaleshwar Strawberry Festival", style: TextStyle(overflow: TextOverflow.ellipsis, color: Colors.white, fontWeight: FontWeight.w700),
 
+            ),
           ),
         ),),
       body: SafeArea(
@@ -38,7 +40,7 @@ class ExPackages extends StatelessWidget {
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Location: Mahabaleshwar, Maharashtra", style: Styles.headlineStyle3,),
+                        Expanded(child: Text("Location: Mahabaleshwar, Maharashtra", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(

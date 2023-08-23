@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:chalokisaan/screens/ads.dart';
 import 'package:chalokisaan/screens/ads2.dart';
 import 'package:chalokisaan/screens/packages/package_view.dart';
+import 'package:chalokisaan/screens/packages/package_view2.dart';
 import 'package:chalokisaan/screens/profile_view.dart';
 import 'package:chalokisaan/utils/style.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -285,13 +286,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                           // const Gap(5),
                                           Text("Sweet and juicy straw only from...", style: TextStyle(fontWeight: FontWeight.w500),),
                                           const Gap(5),
-                                          Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              const Gap(5),
-                                              Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
-                                              Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
-                                            ],
+                                          InkWell(
+                                            onTap: () {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages2()));
+                                            },
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                const Gap(5),
+                                                Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
