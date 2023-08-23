@@ -9,6 +9,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import '../maps/maps.dart';
 import 'chats/community_view.dart';
 
 import '../Gov_Schemes/government_schemes.dart';
@@ -120,6 +121,17 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Visit Hidden Gems →'),
         onTap: () {
           // Add navigation logic to redirect to the pricing section
+        },
+      ),
+      ListTile(
+        leading: Icon(Icons.map),
+        title: Text('MAPS'),
+        onTap: () {
+          // Add navigation logic to redirect to the pricing section
+          Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TouristAttractionsScreen()),
+    );
         },
       ),
       ListTile(
@@ -375,7 +387,42 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
 
               ),
-              // Rest of your content here
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                width: MediaQuery.of(context).size.width,
+                color: Colors.white, // Customize the background color as needed
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Tagline
+                    Text(
+                      "Custom Packages",
+                      style: Styles.headlineStyle2, // Customize the style as needed
+                    ),
+                    const Gap(20),
+
+                    // Header
+                    Text(
+                      "Don't find what you're looking for..",
+                      style: Styles.headlineStyle3, // Customize the style as needed
+                    ),
+                    const Gap(20),
+
+                    // Button
+                    ElevatedButton(
+                      onPressed: () {
+                        // Redirect to custom_packages.dart when the button is pressed
+                        Navigator.pushNamed(context, '/custom_packages');
+                      },
+                      child: Text(
+                        "Customize my package",
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+// Rest of your content here
             ],
           ),
         ),
