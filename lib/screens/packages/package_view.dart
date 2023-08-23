@@ -1,7 +1,9 @@
+import 'package:chalokisaan/utils/custom_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/style.dart';
+import 'calender_view.dart';
 
 class ExPackages extends StatelessWidget {
   const ExPackages({super.key});
@@ -18,8 +20,18 @@ class ExPackages extends StatelessWidget {
     ),
     ),),
       body: SafeArea(
-        child: Column(
-
+        child: Container(
+          padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+          width: MediaQuery.of(context).size.width*0.90,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("About the Package: →", style: Styles.headlineStyle2,),
+              JustAButton(text: "text", onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => CalenderView()));
+              }),
+            ],
+          ),
         ),
       ),
     );
