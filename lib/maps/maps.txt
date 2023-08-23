@@ -1,0 +1,161 @@
+import 'package:flutter/material.dart';
+import 'package:google_place/google_place.dart';
+
+class TouristAttractionsScreen extends StatefulWidget {
+  @override
+  _TouristAttractionsScreenState createState() => _TouristAttractionsScreenState();
+}
+
+class _TouristAttractionsScreenState extends State<TouristAttractionsScreen> {
+  final _googlePlace = GooglePlace('AIzaSyD7Mxkn50FGLO9ZBeK8bnKQG2p948-4A6U');
+  final TextEditingController _cityNameController = TextEditingController();
+  List<SearchResult> _touristAttractions = [];
+
+  void _fetchTouristAttractions() async {
+    final cityName = _cityNameController.text;
+    if (cityName.isNotEmpty) {
+      final response = await _googlePlace.search.getTextSearch(
+        'Tourist attractions in $cityName',
+      );
+
+      if (response?.status == 'OK') {
+        setState(() {
+          _touristAttractions = response!.results!;
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tourist Attractions'),
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              controller: _cityNameController,
+              decoration: InputDecoration(
+                labelText: 'Enter City Name',
+                suffixIcon: IconButton(
+                  onPressed: _fetchTouristAttractions,
+                  icon: Icon(Icons.search),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: _touristAttractions.length,
+              itemBuilder: (context, index) {
+                final attraction = _touristAttractions[index];
+                return ListTile(
+                  title: Text(attraction.name ?? ''),
+                  subtitle: Text(attraction.vicinity ?? ''),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+// import 'package:flutter/material.dart';
+// import 'package:google_place/google_place.dart';
+// import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+// class TouristAttractionsScreen extends StatefulWidget {
+//   @override
+//   _TouristAttractionsScreenState createState() => _TouristAttractionsScreenState();
+// }
+
+// class _TouristAttractionsScreenState extends State<TouristAttractionsScreen> {
+//   final _googlePlace = GooglePlace('AIzaSyD7Mxkn50FGLO9ZBeK8bnKQG2p948-4A6U'); // Replace with your Google Maps API Key
+//   final TextEditingController _cityNameController = TextEditingController();
+//   List<SearchResult> _touristAttractions = [];
+//   GoogleMapController? _mapController;
+//   List<Marker> _markers = [];
+
+//   void _fetchTouristAttractions() async {
+//     final cityName = _cityNameController.text;
+//     if (cityName.isNotEmpty) {
+//       final response = await _googlePlace.search.getTextSearch(
+//         'Tourist attractions in $cityName',
+//       );
+
+//       if (response?.status == 'OK') {
+//         setState(() {
+//           _touristAttractions = response!.results!;
+//         });
+
+//         // Update the map with markers
+//         _updateMap();
+//       }
+//     }
+//   }
+
+//   void _updateMap() {
+//     _markers.clear(); // Clear existing markers
+
+//     for (final attraction in _touristAttractions) {
+//       final lat = attraction.geometry?.location?.lat ?? 0.0;
+//       final lng = attraction.geometry?.location?.lng ?? 0.0;
+
+//       _markers.add(
+//         Marker(
+//           markerId: MarkerId(attraction.placeId ?? ''),
+//           position: LatLng(lat, lng),
+//           infoWindow: InfoWindow(
+//             title: attraction.name ?? '',
+//             snippet: attraction.vicinity ?? '',
+//           ),
+//         ),
+//       );
+//     }
+//     setState(() {}); // Trigger a rebuild to update the map with new markers
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Tourist Attractions'),
+//       ),
+//       body: Column(
+//         children: [
+//           Padding(
+//             padding: const EdgeInsets.all(16.0),
+//             child: TextField(
+//               controller: _cityNameController,
+//               decoration: InputDecoration(
+//                 labelText: 'Enter City Name',
+//                 suffixIcon: IconButton(
+//                   onPressed: _fetchTouristAttractions,
+//                   icon: Icon(Icons.search),
+//                 ),
+//               ),
+//             ),
+//           ),
+//           Expanded(
+//             child: GoogleMap(
+//               onMapCreated: (controller) {
+//                 _mapController = controller;
+//               },
+//               initialCameraPosition: CameraPosition(
+//                 target: LatLng(0, 0), // Initial map center (you can change this)
+//                 zoom: 10.0, // Initial zoom level (you can change this)
+//               ),
+//               markers: Set<Marker>.from(_markers),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
