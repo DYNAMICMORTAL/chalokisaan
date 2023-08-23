@@ -204,53 +204,162 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     const Gap(20),
-                    Container(
-                      child: Column(
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
                         children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
-                                // height: 100,
-                                decoration: BoxDecoration(
-                                  color: Colors.grey.shade200,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                // width: MediaQuery.of(context).size.width/2.5,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                          Container(
+                            child: Column(
+                              children: [
+                                Row(
                                   children: [
-                                    Text("Nashik Vineyard Experience:", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
-                                    const Gap(10),
                                     Container(
+                                      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                                      // height: 100,
                                       decoration: BoxDecoration(
+                                        color: Colors.grey.shade200,
                                         borderRadius: BorderRadius.circular(10),
                                       ),
-                                      child: const Image(
-                                          image: AssetImage('lib/assets/grape2.png',),
-                                        // width: 150,
-                                        width: 175,
+                                      // width: MediaQuery.of(context).size.width/2.5,
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text("Nashik Vineyard Experience:", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                          const Gap(10),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(10),
+                                            ),
+                                            child: const Image(
+                                                image: AssetImage('lib/assets/grape2.png',),
+                                              // width: 150,
+                                              width: 175,
+                                            ),
+                                          ),
+                                          const Gap(5),
+                                          // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                          // const Gap(5),
+                                          Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
+                                          const Gap(5),
+                                          Row(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              const Gap(5),
+                                              Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                              Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                            ],
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                    const Gap(5),
-                                    // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
-                                    // const Gap(5),
-                                    Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
-                                    const Gap(5),
-                                    Row(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Gap(5),
-                                        Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
-                                        Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
-                                      ],
-                                    ),
+                                    ), //Package 1 Container
                                   ],
-                                ),
-                              ), //Package 1 Container
-                            ],
-                          ), //#1 row
-                          Row(), // #2 Row
+                                ), //#1 row
+                                Row(), // #2 Row
+                              ],
+                            ),
+                          ),
+                          const Gap(25),
+                          Container(
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                                      // height: 100,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey.shade200,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      // width: MediaQuery.of(context).size.width/2.5,
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text("Nashik Vineyard Experience:", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                          const Gap(10),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(10),
+                                            ),
+                                            child: const Image(
+                                              image: AssetImage('lib/assets/grape2.png',),
+                                              // width: 150,
+                                              width: 175,
+                                            ),
+                                          ),
+                                          const Gap(5),
+                                          // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                          // const Gap(5),
+                                          Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
+                                          const Gap(5),
+                                          Row(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              const Gap(5),
+                                              Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                              Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ), //Package 1 Container
+                                  ],
+                                ), //#1 row
+                                Row(), // #2 Row
+                              ],
+                            ),
+                          ),
+                          const Gap(25),
+                          Container(
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                                      // height: 100,
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey.shade200,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      // width: MediaQuery.of(context).size.width/2.5,
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text("Nashik Vineyard Experience:", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                          const Gap(10),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(10),
+                                            ),
+                                            child: const Image(
+                                              image: AssetImage('lib/assets/grape2.png',),
+                                              // width: 150,
+                                              width: 175,
+                                            ),
+                                          ),
+                                          const Gap(5),
+                                          // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                          // const Gap(5),
+                                          Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
+                                          const Gap(5),
+                                          Row(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              const Gap(5),
+                                              Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                              Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ), //Package 1 Container
+                                  ],
+                                ), //#1 row
+                                Row(), // #2 Row
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),//inner outer exclusive packages
