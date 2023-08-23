@@ -51,49 +51,50 @@ class ExPackages extends StatelessWidget {
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Guided tour of renowned vineyards and wineries", style: Styles.headlineStyle3,),
+                        Expanded(
+                            child: Text("Guided tour of renowned vineyards and wineries", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Wine tasting sessions with experts", style: Styles.headlineStyle3,),
+                        Expanded(child: Text("Wine tasting sessions with experts", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Interactive workshops on grape cultivation and winemaking", style: Styles.headlineStyle3,),
+                        Expanded(child: Text("Interactive workshops on grape cultivation and winemaking", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Accommodation in a vineyard ", style: Styles.headlineStyle3,),
+                        Expanded(child: Text("Accommodation in a vineyard ", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Meals: Traditional Maharashtrian meals using locally sourced ingredients", style: Styles.headlineStyle3,),
+                        Expanded(child: Text("Meals: Traditional Maharashtrian meals using locally sourced ingredients", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Charges: 1,999 per person", style: Styles.headlineStyle3,),
+                        Expanded(child: Text("Charges: 1,999 per person", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Additional Options (not included in package):", style: Styles.headlineStyle3,),
+                        Expanded(child: Text("Additional Options (not included in package):", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
@@ -106,9 +107,15 @@ class ExPackages extends StatelessWidget {
                   ],
                 ),
               ),
-              JustAButton(text: "text", onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => CalenderView()));
-              }),
+              const Gap(30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  JustAButton(text: "Go Ahead", onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CalenderView()));
+                  }),
+                ],
+              ),
             ],
           ),
         ),
