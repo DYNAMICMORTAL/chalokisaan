@@ -124,8 +124,20 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
       ListTile(
+<<<<<<< HEAD
         leading: Icon(Icons.diamond_rounded),
         title: Text('Visit Hidden Gems →'),
+=======
+        leading: Icon(FluentSystemIcons.ic_fluent_home_regular),
+        title: Text('Tourist Attractions'),
+        onTap: () {
+          Navigator.pushNamed(context, '/maps');
+        },
+      ),
+      ListTile(
+        leading: Icon(Icons.map),
+        title: Text('MAPS'),
+>>>>>>> f1ea2464461e3e3d9b20fc0435ce994fe9cef169
         onTap: () {
           // Add navigation logic to redirect to the pricing section
           Navigator.push(
