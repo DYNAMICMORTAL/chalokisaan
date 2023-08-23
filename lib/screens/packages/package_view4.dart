@@ -7,8 +7,8 @@ import 'package:gap/gap.dart';
 import '../../utils/style.dart';
 import 'calender_view.dart';
 
-class ExPackages3 extends StatelessWidget {
-  const ExPackages3({super.key});
+class ExPackages4 extends StatelessWidget {
+  const ExPackages4({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class ExPackages3 extends StatelessWidget {
         title: Center(
           child: Expanded(
             child: Text(
-              "Nagpur Orange Orchard Adventure", style: TextStyle(overflow: TextOverflow.ellipsis, color: Colors.white, fontWeight: FontWeight.w700),
+              "Ratnagiri Coastal Farm Getaway", style: TextStyle(overflow: TextOverflow.ellipsis, color: Colors.white, fontWeight: FontWeight.w700),
 
             ),
           ),
@@ -40,7 +40,7 @@ class ExPackages3 extends StatelessWidget {
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Expanded(child: Text("Location: Nagpur, Maharashtra", style: Styles.headlineStyle3,)),
+                        Expanded(child: Text("Location: Ratnagiri, Maharashtra", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
@@ -55,14 +55,14 @@ class ExPackages3 extends StatelessWidget {
                         Text("◉"),
                         const Gap(10),
                         Expanded(
-                            child: Text("Guided tour of lush orange orchards", style: Styles.headlineStyle3,)),
+                            child: Text("Visit to organic farms and coconut groves", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Expanded(child: Text("Fruit picking sessions", style: Styles.headlineStyle3,)),
+                        Expanded(child: Text("Guided tour of cashew nut processing units", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
@@ -76,7 +76,7 @@ class ExPackages3 extends StatelessWidget {
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Expanded(child: Text("Scenic trek to viewpoints", style: Styles.headlineStyle3,)),
+                        Expanded(child: Text("Coastal cuisine cooking classes", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
@@ -90,21 +90,21 @@ class ExPackages3 extends StatelessWidget {
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Expanded(child: Text("Charges: 1,999 per person", style: Styles.headlineStyle3,)),
+                        Expanded(child: Text("Accommodation in eco-friendly cottages", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Expanded(child: Text("Handmade crafts workshop", style: Styles.headlineStyle3,)),
+                        Expanded(child: Text("Meals: Local seafood-based meals", style: Styles.headlineStyle3,)),
                       ],
                     ),
                     Row(
                       children: [
                         Text("◉"),
                         const Gap(10),
-                        Text("Nature photography workshop", style: Styles.headlineStyle3,),
+                        Text("Boat ride to nearby islands", style: Styles.headlineStyle3,),
                       ],
                     ),
                   ],
