@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/style.dart';
+import 'confirm.dart';
 
 
 class CalenderView extends StatelessWidget {
@@ -69,6 +70,7 @@ class _BookingPageState extends State<BookingPage> {
               ),
               onPressed: () {
                 // Implement your booking confirmation logic here
+                Navigator.push(context, MaterialPageRoute(builder: (context) => AcknowledgementPage()));
               },
               child: Text('Confirm Booking'),
             ),
