@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:chalokisaan/screens/ads.dart';
 import 'package:chalokisaan/screens/ads2.dart';
+import 'package:chalokisaan/screens/packages/package_view.dart';
+import 'package:chalokisaan/screens/profile_view.dart';
 import 'package:chalokisaan/utils/style.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
@@ -114,8 +116,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
       ),
       ListTile(
-        leading: Icon(FluentSystemIcons.ic_fluent_more_regular),
-        title: Text('Women Empowerment'),
+        leading: Icon(Icons.diamond_rounded),
+        title: Text('Visit Hidden Gems →'),
         onTap: () {
           // Add navigation logic to redirect to the pricing section
         },
@@ -241,13 +243,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                           // const Gap(5),
                                           Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
                                           const Gap(5),
-                                          Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              const Gap(5),
-                                              Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
-                                              Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
-                                            ],
+                                          InkWell(
+                                            onTap: () {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages()));
+                                            },
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                const Gap(5),
+                                                Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -409,7 +416,7 @@ class _HomeScreenState extends State<HomeScreen> {
           }
           else if (index == 3) {
             // Navigate to Profile page
-            Navigator.pushNamed(context, '/profile');
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileView()));
           }
         },
       ),
