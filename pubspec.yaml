@@ -71,8 +71,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-#  assets:
-#      - lib/assets/download.jpg
+  assets:
+    - lib/assets/
+    - lib/assets/grape2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

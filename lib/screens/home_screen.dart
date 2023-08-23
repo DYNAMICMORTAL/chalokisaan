@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:chalokisaan/screens/ads.dart';
 import 'package:chalokisaan/screens/ads2.dart';
 import 'package:chalokisaan/utils/style.dart';
@@ -208,39 +210,44 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             children: [
                               Container(
+                                padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
                                 // height: 100,
-                                width: MediaQuery.of(context).size.width/2.5,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.shade200,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                // width: MediaQuery.of(context).size.width/2.5,
                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    // Image.asset('assets/download.jpeg'),
-                                    Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                    Text("Nashik Vineyard Experience:", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                    const Gap(10),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: const Image(
+                                          image: AssetImage('lib/assets/grape2.png',),
+                                        // width: 150,
+                                        width: 175,
+                                      ),
+                                    ),
+                                    const Gap(5),
+                                    // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                    // const Gap(5),
+                                    Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
                                     const Gap(5),
                                     Row(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text("See More "),
+                                        const Gap(5),
+                                        Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
                                         Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
                                       ],
                                     ),
                                   ],
                                 ),
                               ), //Package 1 Container
-                              const Spacer(),
-                              Container(
-                                height: 100,
-                                width: MediaQuery.of(context).size.width/2.5,
-                                child: Column(
-                                  children: [
-                                    Text("Chiplun Cheeku Farm", style: Styles.headlineStyle3,),
-                                    const Gap(5),
-                                    Row(
-                                      children: [
-                                        Text("See More "),
-                                        Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),//Package 2 Container
                             ],
                           ), //#1 row
                           Row(), // #2 Row
