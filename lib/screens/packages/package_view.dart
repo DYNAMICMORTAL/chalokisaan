@@ -112,9 +112,11 @@ class ExPackages extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  JustAButton(text: "Go Ahead", onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => CalenderView()));
-                  }),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFF32612D)),onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => CalenderView()));
+        },
+                      child: Text("Go Ahead", style: TextStyle(color: Colors.white),),)
                 ],
               ),
             ],
