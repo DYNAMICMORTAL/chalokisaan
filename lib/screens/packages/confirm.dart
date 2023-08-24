@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/style.dart';
+import 'confirmpages/confirm1.dart';
+
 class AcknowledgementPage extends StatefulWidget {
   @override
   _AcknowledgementPageState createState() => _AcknowledgementPageState();
@@ -13,6 +16,7 @@ class _AcknowledgementPageState extends State<AcknowledgementPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Acknowledgement'),
+        backgroundColor: Color(0xFFF14453D),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -71,24 +75,15 @@ class _AcknowledgementPageState extends State<AcknowledgementPage> {
                 ],
               ),
 
-              // ElevatedButton(
-              //   onPressed: _isChecked
-              //       ? () {
-              //           Navigator.push(
-              //             context,
-              //             MaterialPageRoute(
-              //               builder: (context) => ConfirmOrderPage(
-              //                 title: 'Nashik Vineyard Experience Project',
-              //                 details:
-              //                     'About the Package: →\n\n◉ Location: Nashik, Maharashtra\n\n◉ Duration: 2 Days, 1 Night\n\n◉ Guided tour of renowned vineyards and wineries\n\n◉ Wine tasting sessions with experts',
-              //                 amount: 5000,
-              //               ),
-              //             ),
-              //           );
-              //         }
-              //       : null,
-              //   child: Text('Confirm Order'),
-              // ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFF14453D),
+                ),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Gateway()));
+                },
+                child: Text("I, accept"),
+              ),
             ],
           ),
         ),
