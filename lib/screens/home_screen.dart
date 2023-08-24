@@ -462,6 +462,37 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ),
+                    const Gap(30),
+                    Container(
+                      child: Column(
+                        children: [
+                          Text("About Us", style: Styles.headlineStyle2),
+                          Row(
+                            children: [
+                              Text("Mr. Mihir Amin"),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text("Mr. Mihir Amin"),
+                            ],
+                          ),
+Row(
+  children: [
+                              Text("Mr. Dev Shirishkar"),
+                            ],
+),Row(
+                            children: [
+                              Text("Mr. Prathamesh Thakare"),
+                            ],
+                          ),Row(
+                            children: [
+                              Text("Mr. Om Bhojane"),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),

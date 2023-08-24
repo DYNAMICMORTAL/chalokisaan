@@ -76,12 +76,7 @@ class _AcknowledgementPageState extends State<AcknowledgementPage> {
               ),
 
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFF14453D),
-                ),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Gateway()));
-                },
+                onPressed: () {},
                 child: Text("I, accept"),
               ),
             ],
