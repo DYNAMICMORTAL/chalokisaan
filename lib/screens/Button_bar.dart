@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:chalokisaan/utils/custom_button.dart';
 import 'package:provider/provider.dart';
 
+import 'home_screen.dart';
+
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
 
@@ -30,9 +32,14 @@ class _BottomBarState extends State<BottomBar> {
                   width: double.infinity,
                   height: 50,
                   child: JustAButton(
-                    onPressed: () {
-                      ap.isSignedIn == true ? Navigator.pushNamed(context, '/homescreen'):
-                      Navigator.pushNamed(context, '/register');
+                    onPressed: () async {
+                      if(ap.isSignedIn == true){
+                        await ap.getDataFromSP().whenComplete(() => Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen())));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));}else{
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                      }
+                      // if(ap.isSignedIn == true)?Navigator.pushNamed(context, '/homescreen'):
+                      // Navigator.pushNamed(context, '/register');
                     },
                     text: "Let's view some deals today ...",
                   ),

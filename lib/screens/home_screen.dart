@@ -27,6 +27,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,18 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         actions: [
-          IconButton(
-            icon: Icon(Icons.logout, color: Colors.white),
-            onPressed: () {
-              // Navigate to BottomBar when the person icon is pressed
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => BottomBar(),
-                ),
-              );
-            },
-          ),
+          Text("           "),
         ],
       ),
       drawer: Drawer(
