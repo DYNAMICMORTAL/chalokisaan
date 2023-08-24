@@ -1,4 +1,5 @@
 import 'package:chalokisaan/provider/auth_provider.dart';
+import 'package:chalokisaan/utils/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:chalokisaan/utils/custom_button.dart';
@@ -23,7 +24,7 @@ class _BottomBarState extends State<BottomBar> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Lets get started ->"),
+                Text("WELCOME →", style: Styles.headlineStyle1,),
                 const SizedBox(height: 20,),
                 SizedBox(
                   width: double.infinity,
@@ -33,7 +34,7 @@ class _BottomBarState extends State<BottomBar> {
                       ap.isSignedIn == true ? Navigator.pushNamed(context, '/homescreen'):
                       Navigator.pushNamed(context, '/register');
                     },
-                    text: "Get started",
+                    text: "Let's view some deals today ...",
                   ),
                 ),
               ],

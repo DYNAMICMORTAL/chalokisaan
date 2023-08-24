@@ -474,7 +474,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Row(
                             children: [
-                              Text("Mr. Mihir Amin"),
+                              Text("Mr. Rahul Kamble"),
                             ],
                           ),
 Row(
