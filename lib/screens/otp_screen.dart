@@ -1,4 +1,5 @@
 import 'package:chalokisaan/provider/auth_provider.dart';
+import 'package:chalokisaan/screens/home_screen.dart';
 import 'package:chalokisaan/screens/user_information_screen.dart';
 import 'package:chalokisaan/utils/basicUtils.dart';
 import 'package:chalokisaan/utils/custom_button.dart';
@@ -108,6 +109,7 @@ class _OtpViewPageState extends State<OtpViewPage> {
       ap.checkExistingUser().then((value) async {
         if(value == true) {
           // user exists in our db
+          ap.getDataFromFirestore().then((value) => ap.saveUserDataToSP().then((value) => ap.setSignIn().then((value) => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomeScreen(),),(route)=>false))));
         } else {
           // New USER
           Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=> const UserInformationScreen()), (route) => false);

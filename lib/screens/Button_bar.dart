@@ -1,5 +1,7 @@
 import 'package:chalokisaan/provider/auth_provider.dart';
 import 'package:chalokisaan/screens/register_screen.dart';
+import 'package:chalokisaan/screens/register_view.dart';
+import 'package:chalokisaan/screens/user_information_screen.dart';
 import 'package:chalokisaan/utils/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +40,7 @@ class _BottomBarState extends State<BottomBar> {
                         await ap.getDataFromSP().whenComplete(() => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(),),),);
                       }
                       else{
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Register()));
                       }
                       // if(ap.isSignedIn == true)?Navigator.pushNamed(context, '/homescreen'):
                       // Navigator.pushNamed(context, '/register');

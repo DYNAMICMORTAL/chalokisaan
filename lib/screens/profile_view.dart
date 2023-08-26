@@ -1,3 +1,4 @@
+import 'package:chalokisaan/screens/home_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -141,12 +142,8 @@ class _ProfileViewState extends State<ProfileView> {
                       InkWell(
                           onTap: () {
                             // Navigate to BottomBar when the person icon is pressed
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottomBar(),
-                              ),
-                            );
+                            ap.userSignOut().then((value) => Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomBar())));
+
                           },
                           child: Text("Log out Aditi M", style: Styles.textStyle.copyWith(color: Colors.red))),
                     ],

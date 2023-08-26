@@ -130,6 +130,13 @@ Future<bool> checkExistingUser () async {
  }
 
 
+ Future getDataFromFirestore() async {
+    await _firebaseFirestore.collection("users").doc(_firebaseAuth.currentUser!.uid).get().then((DocumentSnapshot snapshot) {
+      _userModel = UserModel(name: snapshot['name'], profilePic: snapshot['profilePic'], createdAt: snapshot['createdAt'], phoneNumber: snapshot['phoneNumber'], uid: snapshot['uid']);
+      _uid = userModel.uid;
+    });
+ }
+
  Future saveUserDataToSP() async {
     SharedPreferences s = await SharedPreferences.getInstance();
     await s.setString("user_model", jsonEncode(userModel.toMap()));
@@ -142,5 +149,13 @@ Future<bool> checkExistingUser () async {
     _userModel = UserModel.fromMap(jsonDecode(data));
     _uid = _userModel!.uid;
     notifyListeners();
+ }
+
+ Future userSignOut() async {
+    SharedPreferences s = await SharedPreferences.getInstance();
+    await _firebaseAuth.signOut();
+    _isSignedIn = false;
+    notifyListeners();
+    s.clear();
  }
 }
