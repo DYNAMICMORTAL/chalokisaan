@@ -1,4 +1,5 @@
 import 'package:chalokisaan/screens/customize_packages/user_data_storage.dart';
+import 'package:chalokisaan/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'display_custom_data.dart'; // Import the display_custom_data.dart file
 
@@ -109,6 +110,7 @@ class _CustomPackagesScreenState extends State<CustomPackagesScreen> {
                   child: Text('Submit'),
                 ),
               ),
+              Text("By submitting the form you will be called from Toll No 1800-100-100.",style: Styles.headlineStyle4.copyWith(fontSize: 10),),
             ],
           ),
         ),
