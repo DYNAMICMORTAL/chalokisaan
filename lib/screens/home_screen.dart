@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'dart:io';
 import 'package:chalokisaan/screens/ads.dart';
 import 'package:chalokisaan/screens/ads2.dart';
 import 'package:chalokisaan/screens/packages/package_view.dart';
@@ -12,11 +12,13 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 import '../maps/maps.dart';
 import 'chats/community_view.dart';
 
 import '../Gov_Schemes/government_schemes.dart';
 import '../news/news.dart';
+import '../provider/auth_provider.dart';
 import 'Button_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,9 +29,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  // final ap =
   @override
   Widget build(BuildContext context) {
+    final ap = Provider.of<AuthProvider>(context, listen:false);
+
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -48,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         actions: [
-          Text("           "),
+          Text(" "),
         ],
       ),
       drawer: Drawer(
@@ -77,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.pushNamed(context, '/profile'); // Navigate to Profile screen
                     },
                     child: Text(
-                      'Aditi M',
+                      ap.userModel.name,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,

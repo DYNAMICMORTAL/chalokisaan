@@ -1,4 +1,5 @@
 import 'package:chalokisaan/provider/auth_provider.dart';
+import 'package:chalokisaan/screens/register_screen.dart';
 import 'package:chalokisaan/utils/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,9 +35,10 @@ class _BottomBarState extends State<BottomBar> {
                   child: JustAButton(
                     onPressed: () async {
                       if(ap.isSignedIn == true){
-                        await ap.getDataFromSP().whenComplete(() => Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen())));
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));}else{
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                        await ap.getDataFromSP().whenComplete(() => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(),),),);
+                      }
+                      else{
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
                       }
                       // if(ap.isSignedIn == true)?Navigator.pushNamed(context, '/homescreen'):
                       // Navigator.pushNamed(context, '/register');
