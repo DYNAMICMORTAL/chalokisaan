@@ -145,7 +145,7 @@ class _ProfileViewState extends State<ProfileView> {
                             ap.userSignOut().then((value) => Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomBar())));
 
                           },
-                          child: Text("Log out Aditi M", style: Styles.textStyle.copyWith(color: Colors.red))),
+                          child: Text("Log out ${ap.userModel.name}", style: Styles.textStyle.copyWith(color: Colors.red))),
                     ],
                   ),const Gap(10),
                   Row(

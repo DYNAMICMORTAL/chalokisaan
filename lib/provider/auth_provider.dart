@@ -18,6 +18,8 @@ class AuthProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? _uid;
   String get uid => _uid!;
+  String? _phoneNumber;
+  String get phoneNumber => _phoneNumber!;
   UserModel? _userModel;
   UserModel get userModel => _userModel!;
 
@@ -148,6 +150,7 @@ Future<bool> checkExistingUser () async {
     String data = s.getString("user_model") ?? '';
     _userModel = UserModel.fromMap(jsonDecode(data));
     _uid = _userModel!.uid;
+    _phoneNumber = _userModel!.phoneNumber;
     notifyListeners();
  }
 
