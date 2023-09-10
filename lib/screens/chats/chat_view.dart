@@ -236,10 +236,10 @@ class _ChatScreenState extends State<ChatScreen> {
             },
           ),
         ],
-        backgroundColor: Color(0xFFF063611),
+        backgroundColor: Color(0xFFF1f2c34),
         iconTheme: IconThemeData(color: Colors.white),
       ),
-      backgroundColor: Color(0xFFF063611), // Set the background color of the chat screen to green
+      backgroundColor: Color(0xFFF09141a), // Set the background color of the chat screen to green
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10), // Add padding from left and right
         child: Column(
@@ -274,7 +274,7 @@ class _ChatScreenState extends State<ChatScreen> {
               padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
+                  color: Color(0xFFF1f2c34),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Padding(
@@ -291,13 +291,14 @@ class _ChatScreenState extends State<ChatScreen> {
                           },
                           decoration: InputDecoration(
                             hintText: 'Type your message...',
+                            hintStyle: TextStyle(color: Color(0xFFF85929a)),
                           ),
                         ),
                       ),
                       const Gap(15),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.greenAccent, // Change the color of the send button
+                          color: Color(0xFFF01a883), // Change the color of the send button
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: IconButton(
@@ -335,6 +336,7 @@ class MessageBubble extends StatelessWidget {
             isMe ? 'You' : 'Sender',
             style: TextStyle(
               fontWeight: FontWeight.bold,
+              color: Colors.orangeAccent,
             ),
           ),
           Material(
@@ -345,7 +347,7 @@ class MessageBubble extends StatelessWidget {
               bottomLeft: Radius.circular(30.0),
               bottomRight: Radius.circular(30.0),
             ),
-            color: isMe ? Colors.greenAccent : Colors.grey, // Change the color of chat bubbles
+            color: isMe ? Color(0xFFF005d4b) : Color(0xFFF1f2c34), // Change the color of chat bubbles
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text(
