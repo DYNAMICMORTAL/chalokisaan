@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'chat_view.dart';
+import 'chat_view2.dart';
 import 'community_view.dart';
 
 import '../../utils/style.dart';
@@ -75,40 +76,47 @@ class Chat extends StatelessWidget {
                       ),
                     ),
                     const Gap(25),
-                    Container(
-                      height: 180,
-                      // width: 500,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(left: 20, right: 20, top:20,bottom: 20),
-                            child: Column(
-                              children: [
-                                Text("Ratnagiri Mandi Union", style: Styles.headlineStyle1,),
-                                const Gap(10),
-                                Row(
-                                  children: [
-                                    Text("Newest Updates...", style: Styles.headlineStyle5),
-                                    const Spacer(),
-                                    Text("30secs ago...", style: Styles.headlineStyle4),
-                                  ],
-                                ),
-                                const Gap(5),
-                                Row(
-                                  children: [
-                                    Text("Case filed at HC...", overflow: TextOverflow.ellipsis,),
-                                    const Gap(5),
-                                    Icon(FluentSystemIcons.ic_fluent_arrow_right_filled,),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),//Group1// Group1
-                        ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ChatScreen2()),);
+                      },
+                      child: Container(
+                        height: 180,
+                        // width: 500,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade200,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.only(left: 20, right: 20, top:20,bottom: 20),
+                              child: Column(
+                                children: [
+                                  Text("Ratnagiri Mandi Union", style: Styles.headlineStyle1,),
+                                  const Gap(10),
+                                  Row(
+                                    children: [
+                                      Text("Newest Updates...", style: Styles.headlineStyle5),
+                                      const Spacer(),
+                                      Text("30secs ago...", style: Styles.headlineStyle4),
+                                    ],
+                                  ),
+                                  const Gap(5),
+                                  Row(
+                                    children: [
+                                      Text("Case filed at HC...", overflow: TextOverflow.ellipsis,),
+                                      const Gap(5),
+                                      Icon(FluentSystemIcons.ic_fluent_arrow_right_filled,),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),//Group1// Group1
+                          ],
+                        ),
                       ),
                     ),
                   ],
