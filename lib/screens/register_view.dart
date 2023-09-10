@@ -125,8 +125,6 @@ class _RegisterState extends State<Register> {
   }
 
   void loginAsGuest() {
-    // Implement the logic for "Login as Guest" button press here
-    // For example, you can navigate to HomeScreen
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
   }
 }

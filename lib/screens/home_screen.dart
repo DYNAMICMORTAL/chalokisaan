@@ -193,226 +193,270 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Row(
                         children: [
                           Container(
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
-                                      // height: 100,
-                                      decoration: BoxDecoration(
-                                        color: Colors.grey.shade200,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      // width: MediaQuery.of(context).size.width/2.5,
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text("Nashik Vineyard Experience:", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
-                                          const Gap(10),
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
-                                            ),
-                                            child: const Image(
-                                              image: AssetImage('lib/assets/grape2.png',),
-                                              // width: 150,
-                                              width: 200,
-                                            ),
-                                          ),
-                                          const Gap(5),
-                                          // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
-                                          // const Gap(5),
-                                          Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
-                                          const Gap(5),
-                                          InkWell(
-                                            onTap: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages()));
-                                            },
-                                            child: Row(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                const Gap(5),
-                                                Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
-                                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ), //Package 1 Container
-                                  ],
-                                ), //#1 row
-                                Row(), // #2 Row
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color.fromRGBO(212, 212, 212, 0.75),
+                                  offset: Offset(12, 15), // Adjust the offset values
+                                  blurRadius: 5,
+                                ),
                               ],
+                            ),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                                        // height: 100,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey.shade200,
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        // width: MediaQuery.of(context).size.width/2.5,
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Nashik Vineyard Experience:", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                            const Gap(10),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
+                                              child: const Image(
+                                                image: AssetImage('lib/assets/grape2.png',),
+                                                // width: 150,
+                                                width: 200,
+                                              ),
+                                            ),
+                                            const Gap(5),
+                                            // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                            // const Gap(5),
+                                            Text("Taste the wine from the be...", style: TextStyle(fontWeight: FontWeight.w500),),
+                                            const Gap(5),
+                                            InkWell(
+                                              onTap: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages()));
+                                              },
+                                              child: Row(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  const Gap(5),
+                                                  Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                                  Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ), //Package 1 Container
+                                    ],
+                                  ), //#1 row
+                                  Row(), // #2 Row
+                                ],
+                              ),
                             ),
                           ),
                           const Gap(25),
                           Container(
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
-                                      // height: 100,
-                                      decoration: BoxDecoration(
-                                        color: Colors.grey.shade200,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      // width: MediaQuery.of(context).size.width/2.5,
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text("Mahabaleshwar Strawberry Fes..", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
-                                          const Gap(10),
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
-                                            ),
-                                            child: const Image(
-                                              image: AssetImage('lib/assets/strawberries.png',),
-                                              // width: 150,
-                                              width: 225,
-                                            ),
-                                          ),
-                                          const Gap(5),
-                                          // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
-                                          // const Gap(5),
-                                          Text("Sweet and juicy straw only from...", style: TextStyle(fontWeight: FontWeight.w500),),
-                                          const Gap(5),
-                                          InkWell(
-                                            onTap: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages2()));
-                                            },
-                                            child: Row(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                const Gap(5),
-                                                Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
-                                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ), //Package 1 Container
-                                  ],
-                                ), //#1 row
-                                Row(), // #2 Row
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color.fromRGBO(212, 212, 212, 0.75),
+                                  offset: Offset(12, 15), // Adjust the offset values
+                                  blurRadius: 5,
+                                ),
                               ],
+                            ),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                                        // height: 100,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey.shade200,
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        // width: MediaQuery.of(context).size.width/2.5,
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Mahabaleshwar Strawberry Fes..", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                            const Gap(10),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
+                                              child: const Image(
+                                                image: AssetImage('lib/assets/strawberries.png',),
+                                                // width: 150,
+                                                width: 225,
+                                              ),
+                                            ),
+                                            const Gap(5),
+                                            // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                            // const Gap(5),
+                                            Text("Sweet and juicy straw only from...", style: TextStyle(fontWeight: FontWeight.w500),),
+                                            const Gap(5),
+                                            InkWell(
+                                              onTap: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages2()));
+                                              },
+                                              child: Row(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  const Gap(5),
+                                                  Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                                  Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ), //Package 1 Container
+                                    ],
+                                  ), //#1 row
+                                  Row(), // #2 Row
+                                ],
+                              ),
                             ),
                           ),
                           const Gap(25),
                           Container(
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
-                                      // height: 100,
-                                      decoration: BoxDecoration(
-                                        color: Colors.grey.shade200,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      // width: MediaQuery.of(context).size.width/2.5,
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text("Nagpur Orange Orchard Ad..", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
-                                          const Gap(10),
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
-                                            ),
-                                            child: const Image(
-                                              image: AssetImage('lib/assets/orange.png',),
-                                              // width: 150,
-                                              width: 200,
-                                            ),
-                                          ),
-                                          const Gap(5),
-                                          // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
-                                          // const Gap(5),
-                                          Text("Orange never so orange befo..", style: TextStyle(fontWeight: FontWeight.w500),),
-                                          const Gap(5),
-                                          InkWell(
-                                            onTap: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages3()));
-                                            },
-                                            child: Row(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                const Gap(5),
-                                                Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
-                                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ), //Package 1 Container
-                                  ],
-                                ), //#1 row
-                                Row(), // #2 Row
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color.fromRGBO(212, 212, 212, 0.75),
+                                  offset: Offset(12, 15), // Adjust the offset values
+                                  blurRadius: 5,
+                                ),
                               ],
+                            ),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                                        // height: 100,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey.shade200,
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        // width: MediaQuery.of(context).size.width/2.5,
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Nagpur Orange Orchard Ad..", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                            const Gap(10),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
+                                              child: const Image(
+                                                image: AssetImage('lib/assets/orange.png',),
+                                                // width: 150,
+                                                width: 200,
+                                              ),
+                                            ),
+                                            const Gap(5),
+                                            // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                            // const Gap(5),
+                                            Text("Orange never so orange befo..", style: TextStyle(fontWeight: FontWeight.w500),),
+                                            const Gap(5),
+                                            InkWell(
+                                              onTap: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages3()));
+                                              },
+                                              child: Row(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  const Gap(5),
+                                                  Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                                  Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ), //Package 1 Container
+                                    ],
+                                  ), //#1 row
+                                  Row(), // #2 Row
+                                ],
+                              ),
                             ),
                           ),
                           const Gap(25),
                           Container(
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
-                                      // height: 100,
-                                      decoration: BoxDecoration(
-                                        color: Colors.grey.shade200,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      // width: MediaQuery.of(context).size.width/2.5,
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text("Ratnagiri Haapus Festival...", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
-                                          const Gap(10),
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
-                                            ),
-                                            child: const Image(
-                                              image: AssetImage('lib/assets/mango.png',),
-                                              // width: 150,
-                                              width: 250,
-                                            ),
-                                          ),
-                                          const Gap(5),
-                                          // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
-                                          // const Gap(5),
-                                          Text("Organic Farms to Coconut Groves", style: TextStyle(fontWeight: FontWeight.w500),),
-                                          const Gap(5),
-                                          InkWell(
-                                            onTap: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages4()));
-                                            },
-                                            child: Row(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                const Gap(5),
-                                                Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
-                                                Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ), //Package 1 Container
-                                  ],
-                                ), //#1 row
-                                Row(), // #2 Row
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color.fromRGBO(212, 212, 212, 0.75),
+                                  offset: Offset(12, 15), // Adjust the offset values
+                                  blurRadius: 5,
+                                ),
                               ],
+                            ),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                                        // height: 100,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey.shade200,
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        // width: MediaQuery.of(context).size.width/2.5,
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Ratnagiri Haapus Festival...", style: Styles.headlineStyle3.copyWith(fontSize: 15, fontWeight: FontWeight.w700), overflow: TextOverflow.ellipsis,),
+                                            const Gap(10),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
+                                              child: const Image(
+                                                image: AssetImage('lib/assets/mango.png',),
+                                                // width: 150,
+                                                width: 250,
+                                              ),
+                                            ),
+                                            const Gap(5),
+                                            // Text("Enrich yourselves with the famous Ratnagiri Alphansos", style: Styles.headlineStyle3,),
+                                            // const Gap(5),
+                                            Text("Organic Farms to Coconut Groves", style: TextStyle(fontWeight: FontWeight.w500),),
+                                            const Gap(5),
+                                            InkWell(
+                                              onTap: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => ExPackages4()));
+                                              },
+                                              child: Row(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  const Gap(5),
+                                                  Text("See More ", style: Styles.headlineStyle2.copyWith(fontSize: 14, color: Colors.deepPurpleAccent),),
+                                                  Icon(FluentSystemIcons.ic_fluent_arrow_right_filled),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ), //Package 1 Container
+                                    ],
+                                  ), //#1 row
+                                  Row(), // #2 Row
+                                ],
+                              ),
                             ),
                           ),
                         ],
