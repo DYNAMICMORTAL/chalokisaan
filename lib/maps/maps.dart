@@ -35,7 +35,7 @@ class _TouristAttractionsScreenState extends State<TouristAttractionsScreen> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
             child: TextField(
               controller: _cityNameController,
               decoration: InputDecoration(

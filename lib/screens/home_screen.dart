@@ -456,36 +456,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     const Gap(30),
-                    Container(
-                      child: Column(
-                        children: [
-                          Text("About Us", style: Styles.headlineStyle2),
-                          Row(
-                            children: [
-                              Text("Mr. Mihir Amin"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Text("Mr. Rahul Kamble"),
-                            ],
-                          ),
-Row(
-  children: [
-                              Text("Mr. Dev Shirishkar"),
-                            ],
-),Row(
-                            children: [
-                              Text("Mr. Prathamesh Thakare"),
-                            ],
-                          ),Row(
-                            children: [
-                              Text("Mr. Om Bhojane"),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),
