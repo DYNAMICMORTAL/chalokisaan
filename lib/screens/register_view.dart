@@ -1,3 +1,4 @@
+import 'package:chalokisaan/Farmer_Dashboard/homefarmer.dart';
 import 'package:chalokisaan/provider/auth_provider.dart';
 import 'package:chalokisaan/utils/custom_button.dart';
 import 'package:country_picker/country_picker.dart';
@@ -111,6 +112,18 @@ class _RegisterState extends State<Register> {
                   text: "Login as Guest",
                 ),
               ),
+              const SizedBox(height: 10,), // Add spacing
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: JustAButton(
+                  onPressed: () {
+                    // Handle "Login as Guest" button press
+                    loginAsFarmer();
+                  },
+                  text: "Login as Farmer",
+                ),
+              ),
             ],
           ),
         ),
@@ -126,5 +139,9 @@ class _RegisterState extends State<Register> {
 
   void loginAsGuest() {
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+  }
+
+  void loginAsFarmer() {
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeFarmer()));
   }
 }
