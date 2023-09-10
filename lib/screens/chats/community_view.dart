@@ -13,7 +13,7 @@ class Chat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor: Color(0xFFF14453D),
+          backgroundColor: Color(0xFFF1f2c34),
           iconTheme: IconThemeData(color: Colors.white),
         title: Center(
         child: Text(

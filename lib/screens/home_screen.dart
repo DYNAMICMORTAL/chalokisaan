@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: CircleAvatar(
                       radius: 40,
-                      backgroundImage: AssetImage('lib/assets/undraw_Profile_pic_re_iwgo.png'),
+                      backgroundImage: NetworkImage(ap.userModel.profilePic),
                     ),
                   ),
                   SizedBox(height: 10),

@@ -1,6 +1,6 @@
 # chalokisaan
 
-Infrastructure for Kisans of India
+Infrastructure for Kisaans of India
 
 ## Getting Started
 
