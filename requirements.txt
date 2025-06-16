@@ -1,0 +1,6 @@
+Flask
+google-generativeai
+gunicorn
+markdown
+gradio-client
+google-genai

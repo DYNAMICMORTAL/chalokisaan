@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chalo Kisaan</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="../static/styles.css" />
+
+<!-- PDF Generation Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+<style>
+  .footer {
+    background-color: #f0f9ff;
+    color: #333333;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+  .submit-button {
+    background-color: #15803d;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+  .submit-button:hover {
+    background-color: #166534;
+  }
+  .result-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+  }
+  
+  /* Markdown content styling */
+  .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+    font-weight: bold;
+    color: #166534;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .markdown-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .markdown-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .markdown-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .markdown-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .markdown-content ul, .markdown-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .markdown-content ul {
+    list-style-type: disc;
+  }
+  
+  .markdown-content ol {
+    list-style-type: decimal;
+  }
+  
+  .markdown-content li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .markdown-content strong {
+    font-weight: bold;
+  }
+  
+  .markdown-content em {
+    font-style: italic;
+  }
+  
+  .markdown-content blockquote {
+    border-left: 4px solid #16a34a;
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    color: #4b5563;
+  }
+</style>
+</head>
+<body>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center py-6">
+      <a href="/" class="text-2xl font-bold text-gray-800">Chalo Kisaan</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars fa-2x"></i>
+      </div>
+      <div class="nav-links hidden md:flex">
+        <a href="/predict" class="text-gray-600 mx-2">Start Planning</a>
+        <a href="/visualize" class="text-gray-600 mx-2">Visualize</a>
+        <a href="/generate" class="text-gray-600 mx-2">Generate</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 text-center">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-green-700">Bring Your Farm to Life with Chalo Kisaan</h1>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <img src="https://i.postimg.cc/MKVpG2Bf/planning.png" alt="Agrotourism Image" class="w-full h-auto mx-auto rounded-lg">
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+          <h2 class="text-xl font-semibold mb-4 text-green-700">Find Your Perfect Agrotourism Service</h2>
+          <form id="predictionForm" class="text-left">
+            <div class="mb-4">
+              <label class="block text-gray-700">Land Size (acres)</label>
+              <input type="number" name="land_size" class="form-input" required min="0" step="0.1">
+            </div>
+            
+            <div class="mb-4">
+              <label class="block text-gray-700">Biodiversity</label>
+              <select name="biodiversity" class="form-input" required>
+                <option value="">Select Biodiversity</option>
+                <option value="Forest">Forest</option>
+                <option value="Hills">Hills</option>
+                <option value="Coastal">Coastal</option>
+                <option value="Plains">Plains</option>
+              </select>
+            </div>
+            
+            <div class="mb-4">
+              <label class="block text-gray-700">Budget</label>
+              <input type="number" name="budget" class="form-input" required min="0" step="0.1">
+            </div>
+            
+            <div class="mb-4">
+              <label class="block text-gray-700">Existing Infrastructure</label>
+              <select name="infrastructure" class="form-input" required>
+                <option value="">Select Infrastructure</option>
+                <option value="Tea Bungalow">Tea Bungalow</option>
+                <option value="Tent Accommodation">Tent Accommodation</option>
+                <option value="Cottage">Cottage</option>
+                <option value="Pond">Pond</option>
+                <option value="Storage Facility">Storage Facility</option>
+                <option value="Traditional House">Traditional House</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="submit-button w-full">Get Recommendations</button>
+          </form>
+
+          <!-- Result Container (Hidden by default) -->
+          <div id="resultContainer" class="result-container hidden">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-lg font-semibold text-green-700">Recommended Service</h3>
+              <button id="downloadPdf" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center">
+                <i class="fas fa-download mr-2"></i> Download PDF
+              </button>
+            </div>
+            <p id="predictionResult" class="text-xl font-bold text-green-800 mb-4"></p>
+            
+            <h4 class="text-lg font-semibold mb-2 text-green-700">Why This Service?</h4>
+            <div id="explanationResult" class="text-gray-700 markdown-content bg-white p-4 rounded-lg border border-green-200 mt-2"></div>
+            
+            <div id="pdfLoading" class="hidden text-center py-4">
+              <div class="spinner mx-auto">
+                <i class="fas fa-spinner fa-spin fa-2x text-green-600"></i>
+              </div>
+              <p class="text-gray-600 mt-2">Generating PDF...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-green-50">
+      <p class="text-gray-800">&copy; 2025 Chalo Kisaan. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var navigation = document.querySelector('.nav-links');
+      navigation.classList.toggle('mobile-menu');
+    }
+
+    document.getElementById('predictionForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      const submitButton = this.querySelector('button[type="submit"]');
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+      submitButton.disabled = true;
+      
+      const formData = new FormData(this);
+      const data = {
+        land_size: parseFloat(formData.get('land_size')),
+        biodiversity: formData.get('biodiversity'),
+        budget: parseFloat(formData.get('budget')),
+        infrastructure: formData.get('infrastructure')
+      };
+
+      try {
+        const response = await fetch('/predict_service', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Server returned an error');
+        }
+
+        const result = await response.json();
+        
+        // Validate the response
+        if (!result.prediction) {
+          throw new Error('No prediction received from the server');
+        }
+        
+        // Store data for PDF generation
+        window.predictionData = {
+          service: result.prediction,
+          explanation: result.explanation || '<p>No detailed explanation available at this time.</p>',
+          inputs: data
+        };
+        
+        // Show result
+        document.getElementById('resultContainer').classList.remove('hidden');
+        document.getElementById('predictionResult').textContent = result.prediction;
+        document.getElementById('explanationResult').innerHTML = result.explanation || '<p>No detailed explanation available at this time.</p>';
+        
+        // Scroll to result
+        document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth' });
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while getting the prediction: ' + error.message);
+      } finally {
+        // Restore button state
+        submitButton.innerHTML = 'Get Recommendations';
+        submitButton.disabled = false;
+      }
+    });
+    
+    // PDF generation logic
+    if (typeof document.getElementById('downloadPdf') !== 'undefined' && document.getElementById('downloadPdf') !== null) {
+      document.getElementById('downloadPdf').addEventListener('click', function() {
+        if (!window.predictionData) return;
+        
+        const pdfLoading = document.getElementById('pdfLoading');
+        const downloadBtn = document.getElementById('downloadPdf');
+        
+        // Show loading animation
+        pdfLoading.classList.remove('hidden');
+        downloadBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        downloadBtn.disabled = true;
+        
+        setTimeout(() => {
+          try {
+            // Initialize jsPDF
+            window.jsPDF = window.jspdf.jsPDF;
+            const pdf = new jsPDF({
+              orientation: 'p',
+              unit: 'pt',
+              format: 'a4',
+              putOnlyUsedFonts: true,
+              compress: true
+            });
+            
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHeight = pdf.internal.pageSize.getHeight();
+            const margin = 40;
+            const effectiveWidth = pageWidth - (margin * 2);
+            
+            // Define theme colors
+            const primaryColor = '#166534';
+            const secondaryColor = '#16a34a';
+            const textColor = '#111827';
+            const lightGray = '#f9fafb';
+            
+            // Add header
+            pdf.setFillColor(lightGray);
+            pdf.rect(0, 0, pageWidth, 80, 'F');
+            
+            pdf.setFont('helvetica', 'bold');
+            pdf.setFontSize(20);
+            pdf.setTextColor(primaryColor);
+            
+            const title = 'Agrotourism Service Recommendation';
+            const titleWidth = pdf.getStringUnitWidth(title) * 20 / pdf.internal.scaleFactor;
+            const titleX = (pageWidth - titleWidth) / 2;
+            pdf.text(title, titleX, 45);
+            
+            // Add green line under the header
+            pdf.setDrawColor(secondaryColor);
+            pdf.setLineWidth(2);
+            pdf.line(margin, 80, pageWidth - margin, 80);
+            
+            // Add content
+            let currentY = 100;
+            
+            // Add recommended service
+            pdf.setFont('helvetica', 'bold');
+            pdf.setFontSize(16);
+            pdf.setTextColor(primaryColor);
+            pdf.text('Recommended Service:', margin, currentY);
+            currentY += 30;
+            
+            pdf.setFont('helvetica', 'bold');
+            pdf.setFontSize(18);
+            pdf.setTextColor(secondaryColor);
+            pdf.text(window.predictionData.service, margin, currentY);
+            currentY += 40;
+            
+            // Add input parameters
+            pdf.setFont('helvetica', 'bold');
+            pdf.setFontSize(14);
+            pdf.setTextColor(primaryColor);
+            pdf.text('Based on Your Input Parameters:', margin, currentY);
+            currentY += 25;
+            
+            pdf.setFont('helvetica', 'normal');
+            pdf.setFontSize(12);
+            pdf.setTextColor(textColor);
+            
+            const inputs = [
+              `Land Size: ${window.predictionData.inputs.land_size} acres`,
+              `Biodiversity: ${window.predictionData.inputs.biodiversity}`,
+              `Budget: ₹${window.predictionData.inputs.budget}`,
+              `Infrastructure: ${window.predictionData.inputs.infrastructure}`
+            ];
+            
+            inputs.forEach(input => {
+              pdf.text(`• ${input}`, margin + 10, currentY);
+              currentY += 20;
+            });
+            
+            currentY += 20;
+            
+            // Add explanation title
+            pdf.setFont('helvetica', 'bold');
+            pdf.setFontSize(14);
+            pdf.setTextColor(primaryColor);
+            pdf.text('Why This Service?', margin, currentY);
+            currentY += 25;
+            
+            // Extract plain text explanation from HTML
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = window.predictionData.explanation;
+            const plainExplanation = tempDiv.textContent || tempDiv.innerText || '';
+            
+            // Add explanation text
+            pdf.setFont('helvetica', 'normal');
+            pdf.setFontSize(12);
+            pdf.setTextColor(textColor);
+            
+            const explanationLines = pdf.splitTextToSize(plainExplanation, effectiveWidth);
+            
+            // Check if we need to add a new page
+            if (currentY + explanationLines.length * 15 > pageHeight - 50) {
+              pdf.addPage();
+              
+              // Add header to new page
+              pdf.setFillColor(lightGray);
+              pdf.rect(0, 0, pageWidth, 40, 'F');
+              
+              pdf.setFont('helvetica', 'bold');
+              pdf.setFontSize(12);
+              pdf.setTextColor(primaryColor);
+              pdf.text(title, margin, 25);
+              
+              pdf.setDrawColor(secondaryColor);
+              pdf.setLineWidth(1);
+              pdf.line(margin, 40, pageWidth - margin, 40);
+              
+              currentY = 60;
+            }
+            
+            pdf.text(explanationLines, margin, currentY);
+            currentY += explanationLines.length * 15 + 20;
+            
+            // Add footer
+            pdf.setDrawColor('#e5e7eb');
+            pdf.setLineWidth(0.5);
+            pdf.line(margin, pageHeight - 30, pageWidth - margin, pageHeight - 30);
+            
+            pdf.setFontSize(9);
+            pdf.setTextColor('#6b7280');
+            pdf.setFont('helvetica', 'normal');
+            
+            const footerText = 'Generated by Chalo Kisaan | www.chalokisaan.com';
+            const footerWidth = pdf.getStringUnitWidth(footerText) * 9 / pdf.internal.scaleFactor;
+            const footerX = (pageWidth - footerWidth) / 2;
+            pdf.text(footerText, footerX, pageHeight - 15);
+            
+            // Generate filename with service name
+            const filename = window.predictionData.service.toLowerCase().replace(/\s+/g, '-') + '-recommendation.pdf';
+            
+            // Save PDF
+            pdf.save(filename);
+          } catch (err) {
+            console.error('Error generating PDF:', err);
+            alert('There was an error generating the PDF. Please try again.');
+          }
+          
+          // Hide loading animation
+          pdfLoading.classList.add('hidden');
+          downloadBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          downloadBtn.disabled = false;
+        }, 500);
+      });
+    }
+  </script>
+</body>
+</html>
